@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI AI</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="background">
+
+<div class="grid"></div>
+
+<div class="glow glow-blue"></div>
+
+<div class="glow glow-purple"></div>
+
+</div>
+
+<!-- Main Container -->
+
+<div class="container">
+
+<!-- Branding -->
+
+<div class="branding">
+
+<img src="assets/LOGO.png"
+class="logo"
+alt="NIKKI Logo">
+
+<h1>NIKKI</h1>
+
+<div class="nikki-fullform">
+
+<div><span>N</span> Neural</div>
+
+<div><span>I</span> Intelligent</div>
+
+<div><span>K</span> Knowledge</div>
+
+<div><span>K</span> Kernel</div>
+
+<div><span>I</span> Interface</div>
+
+</div>
+
+<p class="tagline">
+
+THE NEXT GENERATION
+
+<br>
+
+AI ASSISTANT
+
+</p>
+
+</div>
+
+<!-- Login Card -->
+
+<div class="login-card">
+  <!-- LOGIN FORM -->
+
+<div id="loginForm">
+
+<h2>Welcome Back</h2>
+
+<span class="form-subtitle">
+Secure AI Authentication
+</span>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<i class="fa-solid fa-eye eye"></i>
+
+</div>
+
+<div class="options">
+
+<label>
+
+<input type="checkbox">
+
+Remember Me
+
+</label>
+
+<a href="#">
+Forgot Password?
+</a>
+
+</div>
+
+<button
+class="login-btn"
+onclick="login()">
+
+SIGN IN
+
+</button>
+
+<div class="divider">
+
+<span>OR</span>
+
+</div>
+
+<button class="google-btn">
+
+<i class="fa-brands fa-google"></i>
+
+Continue with Google
+
+</button>
+
+<p class="switch-form">
+
+Don't have an account?
+
+<a href="javascript:void(0)"
+onclick="showRegister()">
+
+Create Account
+
+</a>
+
+</p>
+
+</div>
+  <!-- REGISTER FORM -->
+
+<div id="registerForm" style="display:none;">
+
+<h2>Create Account</h2>
+
+<span class="form-subtitle">
+Join the NIKKI AI Network
+</span>
+
+<div class="input-box">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+type="text"
+id="name"
+placeholder="Full Name">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-envelope"></i>
+
+<input
+type="email"
+id="registerEmail"
+placeholder="Email Address">
+
+</div>
+
+<div class="input-box">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+type="password"
+id="registerPassword"
+placeholder="Password">
+
+<i class="fa-solid fa-eye register-eye"></i>
+
+</div>
+
+<button
+class="login-btn"
+onclick="register()">
+
+CREATE ACCOUNT
+
+</button>
+
+<p class="switch-form">
+
+Already have an account?
+
+<a href="javascript:void(0)"
+onclick="showLogin()">
+
+Sign In
+
+</a>
+
+</p>
+
+</div>
+  
+</div>
+
+</div>
+
+<footer class="copyright">
+
+Copyright © 2026 NIKKI. All Rights Reserved.
+
+</footer>
+
+<script type="module" src="firebase.js"></script>
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

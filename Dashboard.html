@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.card{
+    color:white;
+    text-align:center;
+}
+
+.card h2{
+    margin-bottom:15px;
+}
+
+.card p{
+    margin:10px 0;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h2>🎉 Welcome</h2>
+
+<p id="username">Loading...</p>
+
+<p id="useremail"></p>
+
+<button onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+<script type="module">
+
+import { auth, db } from "./firebase.js";
+
+import {
+onAuthStateChanged
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+import {
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+window.logout = async ()=>{
+
+const { signOut } = await import(
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
+);
+
+await signOut(auth);
+
+location.href="index.html";
+
+}
+
+onAuthStateChanged(auth,async(user)=>{
+
+if(!user){
+
+location.href="index.html";
+
+return;
+
+}
+
+const snap=await getDoc(doc(db,"users",user.uid));
+
+if(snap.exists()){
+
+document.getElementById("username").innerHTML=
+"👤 "+snap.data().name;
+
+document.getElementById("useremail").innerHTML=
+"📧 "+snap.data().email;
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
