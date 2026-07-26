@@ -1,15 +1,10 @@
- import { auth, db } from "./Firebase.js";
+import { auth, db } from "./Firebase.js";
 
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-import {
-  doc,
-  setDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"; 
 
 import {
   doc,
@@ -172,7 +167,7 @@ window.login = async function () {
 
         setTimeout(() => {
 
-            location.href = "dashboard.html";
+            location.href="Dashboard.html";
 
         }, 1200);
 
