@@ -1,4 +1,5 @@
 import { auth, db } from "./Firebase.js";
+import NIKKI from "./NIKKI.js";
 
 import {
     onAuthStateChanged,
@@ -22,6 +23,31 @@ onAuthStateChanged(auth, async (user) => {
         return;
 
     }
+   /* ==========================
+   Boot NIKKI Engine
+========================== */
+
+try {
+
+    console.log("Starting NIKKI AI...");
+
+    const result = await NIKKI.boot();
+
+    if(result.success){
+
+        console.log("NIKKI AI Online");
+
+    }else{
+
+        console.error(result.error);
+
+    }
+
+}catch(error){
+
+    console.error("NIKKI Boot Failed:", error);
+
+}
 
     try {
 
