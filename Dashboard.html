@@ -5,17 +5,23 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>NIKKI AI Dashboard</title>
 
-<link rel="stylesheet" href="Dashboard.css">
+<link rel="stylesheet"
+href="Dashboard.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
 
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
@@ -26,49 +32,134 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
 <!-- Sidebar -->
 
-<div class="sidebar">
+<aside class="sidebar">
 
 <div class="logo">
 
-<img src="assets/LOGO.png" alt="NIKKI Logo">
+<img src="assets/LOGO.png"
+alt="NIKKI AI">
 
 <h2>NIKKI AI</h2>
 
 </div>
 
+<nav>
+
 <ul>
 
-<li><i class="fa-solid fa-house"></i> Dashboard</li>
+<li id="dashboardBtn">
 
-<li><i class="fa-solid fa-comments"></i> Chat</li>
+<i class="fa-solid fa-house"></i>
 
-<li><i class="fa-solid fa-brain"></i> Brain</li>
+Dashboard
 
-<li><i class="fa-solid fa-memory"></i> Memory</li>
+</li>
 
-<li><i class="fa-solid fa-list-check"></i> Tasks</li>
+<li id="chatBtn">
 
-<li><i class="fa-solid fa-bullseye"></i> Goals</li>
+<i class="fa-solid fa-comments"></i>
 
-<li><i class="fa-solid fa-microphone"></i> Voice</li>
+Chat
 
-<li><i class="fa-solid fa-eye"></i> Vision</li>
+</li>
 
-<li><i class="fa-solid fa-gear"></i> Settings</li>
+<li id="brainBtn">
 
-<li><i class="fa-solid fa-user"></i> Profile</li>
+<i class="fa-solid fa-brain"></i>
+
+Brain
+
+</li>
+
+<li id="memoryBtn">
+
+<i class="fa-solid fa-memory"></i>
+
+Memory
+
+</li>
+
+<li id="taskBtn">
+
+<i class="fa-solid fa-list-check"></i>
+
+Tasks
+
+</li>
+
+<li id="goalBtn">
+
+<i class="fa-solid fa-bullseye"></i>
+
+Goals
+
+</li>
+
+<li id="voiceBtn">
+
+<i class="fa-solid fa-microphone"></i>
+
+Voice
+
+</li>
+
+<li id="visionBtn">
+
+<i class="fa-solid fa-eye"></i>
+
+Vision
+
+</li>
+
+<li id="settingsBtn">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</li>
+
+<li id="profileBtn">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</li>
 
 <hr>
 
-<li onclick="location.href='Team.html'">👥 Team</li>
+<li id="teamBtn">
 
-<li onclick="location.href='About.html'">ℹ️ About</li>
+<i class="fa-solid fa-users"></i>
 
-<li onclick="location.href='About.html'">📞 Contact</li>
+Team
 
-<li onclick="location.href='Privacy.html'">🔒 Privacy Policy</li>
+</li>
 
-<li onclick="location.href='Terms.html'">📜 Terms & Conditions</li>
+<li id="aboutBtn">
+
+<i class="fa-solid fa-circle-info"></i>
+
+About Us
+
+</li>
+
+<li id="privacyBtn">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Privacy Policy
+
+</li>
+
+<li id="termsBtn">
+
+<i class="fa-solid fa-file-contract"></i>
+
+Terms & Conditions
+
+</li>
 
 <hr>
 
@@ -82,13 +173,17 @@ Logout
 
 </ul>
 
-</div>
+</nav>
+
+</aside>
 
 <!-- Main -->
 
-<div class="main">
+<main class="main">
 
 <header>
+
+<div>
 
 <h1>
 
@@ -104,19 +199,25 @@ Loading...
 
 </h1>
 
+<p>
+
+Your Personal Artificial Intelligence Assistant
+
+</p>
+
+</div>
+
 </header>
 
-<div class="welcome-box">
+  <!-- Welcome Banner -->
 
-<h2>
+<section class="welcome-box">
 
-Welcome to NIKKI AI 🚀
-
-</h2>
+<h2>🚀 Welcome to NIKKI AI</h2>
 
 <p>
 
-Your Personal Artificial Intelligence Assistant is online and ready to help you.
+Your next-generation Artificial Intelligence Assistant is online and ready to help.
 
 </p>
 
@@ -126,11 +227,7 @@ Your Personal Artificial Intelligence Assistant is online and ready to help you.
 
 <h3>AI Status</h3>
 
-<p class="online">
-
-🟢 Online
-
-</p>
+<p class="online">🟢 Online</p>
 
 </div>
 
@@ -138,11 +235,7 @@ Your Personal Artificial Intelligence Assistant is online and ready to help you.
 
 <h3>Brain Modules</h3>
 
-<p>
-
-20 Active
-
-</p>
+<p>20 Active</p>
 
 </div>
 
@@ -150,11 +243,7 @@ Your Personal Artificial Intelligence Assistant is online and ready to help you.
 
 <h3>Memory</h3>
 
-<p>
-
-Ready
-
-</p>
+<p>Ready</p>
 
 </div>
 
@@ -162,21 +251,21 @@ Ready
 
 <h3>Version</h3>
 
-<p>
-
-Alpha v1.0
-
-</p>
+<p>Alpha v1.0</p>
 
 </div>
 
 </div>
 
-</div>
+</section>
+
+<!-- Quick Access -->
+
+<section>
 
 <h2 class="section-title">
 
-Quick Access
+⚡ Quick Access
 
 </h2>
 
@@ -188,13 +277,11 @@ Quick Access
 
 <h2>Brain</h2>
 
-<p>
+<p>Access all AI Brain Modules.</p>
 
-20 AI Modules are active and running.
-
-</p>
-
-<button class="action-btn">
+<button
+class="action-btn"
+id="openBrain">
 
 Open Brain
 
@@ -208,13 +295,11 @@ Open Brain
 
 <h2>Chat</h2>
 
-<p>
+<p>Start chatting with NIKKI AI.</p>
 
-Start chatting with NIKKI AI.
-
-</p>
-
-<button class="action-btn">
+<button
+class="action-btn"
+id="openChat">
 
 Open Chat
 
@@ -228,13 +313,11 @@ Open Chat
 
 <h2>Memory</h2>
 
-<p>
+<p>View AI Memory System.</p>
 
-Manage AI Memory System.
-
-</p>
-
-<button class="action-btn">
+<button
+class="action-btn"
+id="openMemory">
 
 Open Memory
 
@@ -248,13 +331,11 @@ Open Memory
 
 <h2>System</h2>
 
-<p>
+<p>View AI System Status.</p>
 
-Everything is running normally.
-
-</p>
-
-<button class="action-btn">
+<button
+class="action-btn"
+id="openSystem">
 
 View Status
 
@@ -264,18 +345,88 @@ View Status
 
 </div>
 
+</section>
+
+<!-- AI Statistics -->
+
+<section>
+
+<h2 class="section-title">
+
+📊 AI Statistics
+
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>Total Modules</h2>
+
+<p>20</p>
+
 </div>
 
-<script type="module" src="Dashboard.js"></script>
+<div class="card">
 
-  <footer class="copyright">
-    Copyright © 2026 NIKKI AI. All Rights Reserved.
+<h2>Today's Chats</h2>
+
+<p>0</p>
+
+</div>
+
+<div class="card">
+
+<h2>Memory Usage</h2>
+
+<p>0 MB</p>
+
+</div>
+
+<div class="card">
+
+<h2>AI Version</h2>
+
+<p>Alpha v1.0</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Recent Activity -->
+
+<section>
+
+<h2 class="section-title">
+
+📝 Recent Activity
+
+</h2>
+
+<div class="welcome-box">
+
+<p>
+
+No recent activity found.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="copyright">
+
+Copyright © 2026 NIKKI AI. All Rights Reserved.
+
 </footer>
+</main>
 
 <script type="module" src="Dashboard.js"></script>
-
-</body>
-</html>
 
 </body>
 

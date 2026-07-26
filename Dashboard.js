@@ -10,15 +10,15 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* =========================
-   Check Login
-========================= */
+/* ==========================
+   Authentication Check
+========================== */
 
 onAuthStateChanged(auth, async (user) => {
 
     if (!user) {
 
-        location.href = "index.html";
+        window.location.href = "index.html";
         return;
 
     }
@@ -26,41 +26,136 @@ onAuthStateChanged(auth, async (user) => {
     try {
 
         const userRef = doc(db, "users", user.uid);
-
         const userSnap = await getDoc(userRef);
 
         if (userSnap.exists()) {
 
-            document.getElementById("userName").textContent =
-                userSnap.data().name;
+            const data = userSnap.data();
+
+            const userName = document.getElementById("userName");
+
+            if (userName) {
+                userName.textContent = data.name || "User";
+            }
 
         } else {
 
-            document.getElementById("userName").textContent =
-                "User";
+            const userName = document.getElementById("userName");
+
+            if (userName) {
+                userName.textContent = "User";
+            }
 
         }
 
-    }
+    } catch (error) {
 
-    catch (err) {
-
-        console.error(err);
+        console.error("Error loading user:", error);
 
     }
 
 });
 
-/* =========================
+/* ==========================
    Logout
-========================= */
+========================== */
 
 const logoutBtn = document.getElementById("logoutBtn");
 
-logoutBtn.addEventListener("click", async () => {
+if (logoutBtn) {
 
-    await signOut(auth);
+    logoutBtn.addEventListener("click", async () => {
 
-    location.href = "index.html";
+        try {
 
-});
+            await signOut(auth);
+
+            window.location.href = "index.html";
+
+        } catch (error) {
+
+            alert("Logout Failed");
+
+            console.error(error);
+
+        }
+
+    });
+
+}
+
+/* ==========================
+   Sidebar Navigation
+========================== */
+
+function openPage(id, page) {
+
+    const element = document.getElementById(id);
+
+    if (element) {
+
+        element.addEventListener("click", () => {
+
+            window.location.href = page;
+
+        });
+
+    }
+
+}
+
+openPage("dashboardBtn", "Dashboard.html");
+
+openPage("teamBtn", "Team.html");
+
+openPage("aboutBtn", "About.html");
+
+openPage("privacyBtn", "Privacy.html");
+
+openPage("termsBtn", "Terms.html");
+
+openPage("profileBtn", "Profile.html");
+
+/* ==========================
+   Future Pages
+========================== */
+
+function comingSoon(id, feature) {
+
+    const element = document.getElementById(id);
+
+    if (element) {
+
+        element.addEventListener("click", () => {
+
+            alert(feature + " Coming Soon 🚀");
+
+        });
+
+    }
+
+}
+
+comingSoon("chatBtn", "Chat");
+
+comingSoon("brainBtn", "Brain");
+
+comingSoon("memoryBtn", "Memory");
+
+comingSoon("taskBtn", "Tasks");
+
+comingSoon("goalBtn", "Goals");
+
+comingSoon("voiceBtn", "Voice");
+
+comingSoon("visionBtn", "Vision");
+
+comingSoon("settingsBtn", "Settings");
+
+comingSoon("openBrain", "Brain");
+
+comingSoon("openChat", "Chat");
+
+comingSoon("openMemory", "Memory");
+
+comingSoon("openSystem", "System Status");
