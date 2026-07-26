@@ -1,6 +1,6 @@
 /* ==========================================
-   NIKKI AI TEAM v2
-   PART 1
+   NIKKI AI
+   Team.css
 ========================================== */
 
 *{
@@ -20,7 +20,9 @@ body{
     overflow-x:hidden;
 }
 
-/* Background */
+/* ===========================
+   Background
+=========================== */
 
 .background{
     position:fixed;
@@ -31,7 +33,8 @@ body{
 
 .grid{
     position:absolute;
-    inset:0;
+    width:100%;
+    height:100%;
 
     background-image:
     linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
@@ -42,30 +45,32 @@ body{
 
 .glow{
     position:absolute;
-    width:420px;
-    height:420px;
+    width:450px;
+    height:450px;
     border-radius:50%;
     filter:blur(140px);
     opacity:.30;
 }
 
 .glow-blue{
-    background:#00aaff;
-    left:-120px;
-    top:-120px;
+    background:#00a8ff;
+    top:-140px;
+    left:-140px;
 }
 
 .glow-purple{
     background:#8a2be2;
-    right:-120px;
-    bottom:-120px;
+    bottom:-140px;
+    right:-140px;
 }
 
-/* Main */
+/* ===========================
+   Main
+=========================== */
 
-.about-container{
+.team-container{
 
-    max-width:1250px;
+    max-width:1400px;
 
     margin:auto;
 
@@ -73,59 +78,61 @@ body{
 
 }
 
-.about-card{
+.team-card{
 
     background:rgba(255,255,255,.05);
 
+    backdrop-filter:blur(22px);
+
     border:1px solid rgba(255,255,255,.08);
 
-    backdrop-filter:blur(25px);
-
-    border-radius:25px;
+    border-radius:28px;
 
     padding:45px;
 
 }
 
-.about-card h1{
+.team-card h1{
 
     text-align:center;
 
     font-size:44px;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
 }
 
-.about-subtitle{
+.team-subtitle{
 
     text-align:center;
 
-    color:#90b9ff;
+    color:#9ec8ff;
 
-    margin-bottom:45px;
+    margin-bottom:50px;
 
     font-size:18px;
 
 }
 
-/* Sections */
+/* ===========================
+   Section
+=========================== */
 
-.about-section{
+.team-section{
 
     margin-top:45px;
 
 }
 
-.about-section h2{
+.team-section h2{
 
     display:flex;
 
     align-items:center;
 
-    gap:10px;
+    gap:12px;
 
-    color:#43a5ff;
+    color:#49a7ff;
 
     font-size:30px;
 
@@ -133,17 +140,9 @@ body{
 
 }
 
-.about-section p{
-
-    color:#d4dceb;
-
-    line-height:1.8;
-
-}
-
-/* ===============================
+/* ===========================
    Developer Card
-=============================== */
+=========================== */
 
 .developer-card{
 
@@ -151,21 +150,19 @@ body{
 
     align-items:center;
 
-    gap:35px;
+    gap:40px;
 
-    padding:28px;
+    padding:30px;
 
-    border-radius:22px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.03)
-    );
+    background:rgba(255,255,255,.05);
 
     border:1px solid rgba(255,255,255,.08);
 
+    border-radius:24px;
+
     transition:.35s;
+
+    overflow:hidden;
 
 }
 
@@ -175,18 +172,15 @@ body{
 
     border-color:#3b82f6;
 
-    box-shadow:0 20px 45px rgba(59,130,246,.22);
+    box-shadow:0 20px 45px rgba(59,130,246,.25);
 
 }
 
-/* ==========================================
-   PART 2
-   Developer Image + Text + Instagram Button
-========================================== */
+/* Left Side */
 
-.developer-image{
+.developer-left{
 
-    flex-shrink:0;
+    flex:0 0 320px;
 
     display:flex;
 
@@ -196,97 +190,101 @@ body{
 
 }
 
-.developer-image img{
+.developer-left img{
 
-    width:180px;
+    width:300px;
 
-    height:180px;
+    height:auto;
 
-    object-fit:cover;
+    display:block;
 
-    border-radius:50%;
+    border-radius:20px;
 
-    border:5px solid #ffffff;
+    object-fit:contain;
 
-    outline:4px solid #39a9ff;
+    transition:.35s;
 
-    box-shadow:
-        0 0 30px rgba(58,169,255,.45),
-        0 0 60px rgba(138,43,226,.18);
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
 
 }
 
-.developer-info{
+.developer-card:hover .developer-left img{
+
+    transform:scale(1.03);
+
+}
+
+/* Right Side */
+
+.developer-right{
 
     flex:1;
 
 }
 
-.developer-info h4{
+.developer-role{
 
-    color:#36c5ff;
+    display:block;
+
+    color:#28b7ff;
 
     font-size:20px;
 
-    letter-spacing:4px;
-
     font-weight:700;
+
+    letter-spacing:4px;
 
     text-transform:uppercase;
 
-    margin-bottom:15px;
+    margin-bottom:18px;
 
 }
 
-.developer-info h3{
+.developer-right h3{
 
-    font-size:48px;
+    font-size:58px;
 
-    line-height:1.1;
+    line-height:1.05;
 
     font-weight:600;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
-    color:#ffffff;
-
-}
-
-.role{
-
-    display:none;
+    color:#fff;
 
 }
 
-.developer-info p{
+.developer-right p{
 
-    color:#cfd8ea;
+    color:#d6dceb;
 
     line-height:1.9;
 
-    margin-bottom:22px;
+    font-size:17px;
 
-    font-size:16px;
+    margin-bottom:25px;
 
 }
 
-.social-btn{
+/* Instagram */
+
+.instagram-btn{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:12px;
+    gap:14px;
 
-    padding:14px 22px;
+    padding:15px 28px;
 
-    border-radius:14px;
+    border-radius:16px;
 
     text-decoration:none;
 
     color:#fff;
 
-    font-size:18px;
+    font-size:20px;
 
     font-weight:600;
 
@@ -301,64 +299,122 @@ body{
 
 }
 
-.social-btn i{
+.instagram-btn i{
 
-    font-size:28px;
-
-}
-
-.social-btn:hover{
-
-    transform:translateY(-4px) scale(1.03);
-
-    box-shadow:0 12px 25px rgba(253,29,29,.30);
+    font-size:30px;
 
 }
 
-/* ==========================================
-   PART 3
-   Feature Cards + Footer + Copyright
-========================================== */
+.instagram-btn:hover{
 
-/* Feature Grid */
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 25px rgba(253,29,29,.35);
+
+}
+
+/* ===========================
+   Vision
+=========================== */
+
+.team-section p{
+
+    color:#d4dceb;
+
+    line-height:1.9;
+
+    font-size:17px;
+
+}
+
+/* ===========================
+   Feature Grid
+=========================== */
 
 .feature-grid{
+
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
     gap:25px;
+
     margin-top:25px;
+
 }
 
 .feature-card{
+
     background:rgba(255,255,255,.05);
+
     border:1px solid rgba(255,255,255,.08);
+
     backdrop-filter:blur(20px);
+
     border-radius:20px;
+
     padding:30px;
+
     text-align:center;
+
     transition:.35s;
+
 }
 
 .feature-card:hover{
+
     transform:translateY(-8px);
+
     border-color:#3b82f6;
-    box-shadow:0 15px 35px rgba(59,130,246,.25);
+
+    box-shadow:0 18px 40px rgba(59,130,246,.25);
+
 }
 
 .feature-card i{
+
     font-size:42px;
-    color:#43a5ff;
+
+    color:#42a5ff;
+
     margin-bottom:18px;
+
 }
 
 .feature-card h3{
-    font-size:22px;
+
+    font-size:24px;
+
     margin-bottom:12px;
+
+    color:#fff;
+
 }
 
 .feature-card p{
-    color:#cdd7ea;
-    line-height:1.7;
+
+    color:#cfd8ea;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   Roadmap Cards
+=========================== */
+
+.feature-card h3{
+
+    font-weight:700;
+
+}
+
+.feature-card:hover h3{
+
+    color:#4cb3ff;
+
 }
 
 /* ===========================
@@ -366,94 +422,115 @@ body{
 =========================== */
 
 .about-footer{
+
     margin-top:70px;
+
     padding-top:40px;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     text-align:center;
+
 }
 
 .footer-logo-img{
-    width:90px;
+
+    width:95px;
+
     margin-bottom:15px;
+
 }
 
 .footer-logo h2{
+
     font-size:34px;
-    margin-bottom:8px;
+
+    margin-bottom:10px;
+
 }
 
 .footer-logo p{
-    color:#9db7ff;
+
+    color:#9ec8ff;
+
 }
 
 .footer-text{
-    margin:30px auto;
+
     max-width:700px;
-    color:#cfd8ea;
-    line-height:1.8;
+
+    margin:30px auto;
+
+    color:#d4dceb;
+
+    line-height:1.9;
+
 }
 
 .footer-buttons{
+
     display:flex;
+
     justify-content:center;
+
     gap:18px;
+
     flex-wrap:wrap;
-    margin-bottom:35px;
+
+    margin-bottom:30px;
+
 }
 
 .footer-btn{
+
     display:inline-flex;
+
     align-items:center;
+
     gap:10px;
+
     padding:14px 24px;
-    border-radius:14px;
+
     background:#3b82f6;
+
     color:#fff;
+
+    border-radius:14px;
+
     text-decoration:none;
+
     font-weight:600;
+
     transition:.3s;
+
 }
 
 .footer-btn:hover{
+
     background:#2563eb;
+
     transform:translateY(-4px);
+
 }
 
 .copyright{
+
     margin-top:25px;
+
     padding-top:25px;
+
     border-top:1px solid rgba(255,255,255,.08);
+
     color:#9aa8c7;
+
     font-size:14px;
+
 }
 
-/* ==========================================
-   PART 4
-   Responsive + Animation + Scrollbar
-========================================== */
+/* ===========================
+   Animation
+=========================== */
 
-/* Scrollbar */
-
-::-webkit-scrollbar{
-    width:8px;
-}
-
-::-webkit-scrollbar-track{
-    background:#09111f;
-}
-
-::-webkit-scrollbar-thumb{
-    background:#3b82f6;
-    border-radius:20px;
-}
-
-::-webkit-scrollbar-thumb:hover{
-    background:#2563eb;
-}
-
-/* Animation */
-
-.about-card,
 .developer-card,
 .feature-card{
 
@@ -481,7 +558,7 @@ body{
 
 }
 
-/* Floating Logo */
+/* Logo Animation */
 
 .footer-logo-img{
 
@@ -506,6 +583,36 @@ body{
 }
 
 /* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#09111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563eb;
+
+}
+
+/* ===========================
    Responsive
 =========================== */
 
@@ -517,19 +624,25 @@ body{
 
         text-align:center;
 
-    }
-
-    .developer-image img{
-
-        width:160px;
-
-        height:160px;
+        gap:30px;
 
     }
 
-    .developer-info h3{
+    .developer-left{
 
-        font-size:36px;
+        flex:unset;
+
+    }
+
+    .developer-left img{
+
+        width:260px;
+
+    }
+
+    .developer-right h3{
+
+        font-size:42px;
 
     }
 
@@ -537,41 +650,67 @@ body{
 
 @media(max-width:768px){
 
-    .about-card{
+    .team-card{
 
         padding:25px;
 
     }
 
-    .about-card h1{
+    .team-card h1{
 
         font-size:34px;
 
     }
 
-    .about-subtitle{
+    .team-subtitle{
 
         font-size:16px;
 
     }
 
-    .about-section h2{
+    .team-section h2{
 
         font-size:24px;
 
     }
 
-    .developer-info h3{
+    .developer-role{
 
-        font-size:30px;
+        font-size:16px;
+
+        letter-spacing:2px;
 
     }
 
-    .developer-info h4{
+    .developer-right h3{
+
+        font-size:34px;
+
+    }
+
+    .developer-right p{
 
         font-size:15px;
 
-        letter-spacing:2px;
+    }
+
+    .developer-left img{
+
+        width:220px;
+
+    }
+
+    .instagram-btn{
+
+        font-size:16px;
+
+        padding:12px 22px;
+
+    }
+
+    .instagram-btn i{
+
+        font-size:24px;
 
     }
 
@@ -603,45 +742,39 @@ body{
 
 @media(max-width:480px){
 
-    .about-container{
+    .team-container{
 
         padding:15px;
 
     }
 
-    .about-card{
+    .team-card{
 
         padding:20px;
 
     }
 
-    .developer-image img{
+    .team-card h1{
 
-        width:130px;
-
-        height:130px;
+        font-size:28px;
 
     }
 
-    .developer-info h3{
+    .developer-left img{
 
-        font-size:24px;
-
-    }
-
-    .social-btn{
-
-        width:100%;
-
-        justify-content:center;
-
-        font-size:16px;
+        width:180px;
 
     }
 
-    .feature-card{
+    .developer-right h3{
 
-        padding:20px;
+        font-size:28px;
+
+    }
+
+    .developer-role{
+
+        font-size:14px;
 
     }
 
