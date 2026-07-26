@@ -162,7 +162,13 @@ function comingSoon(id, feature) {
 
 }
 
-comingSoon("chatBtn", "Chat");
+/* ==========================
+   Dashboard Buttons
+========================== */
+
+openPage("chatBtn", "Chat.html");
+
+openPage("openChat", "Chat.html");
 
 comingSoon("brainBtn", "Brain");
 
@@ -179,8 +185,6 @@ comingSoon("visionBtn", "Vision");
 comingSoon("settingsBtn", "Settings");
 
 comingSoon("openBrain", "Brain");
-
-comingSoon("openChat", "Chat");
 
 comingSoon("openMemory", "Memory");
 
