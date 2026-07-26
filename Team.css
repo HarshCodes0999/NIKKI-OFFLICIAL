@@ -572,3 +572,142 @@ body{
     }
 
 }
+
+/* ===========================
+   Compatibility Patch
+=========================== */
+
+.about-container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+.about-card{
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    padding:40px;
+}
+
+.about-card h1{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:10px;
+}
+
+.about-subtitle{
+    text-align:center;
+    color:#9db7ff;
+    margin-bottom:40px;
+    font-size:18px;
+}
+
+.about-section{
+    margin-top:40px;
+}
+
+.about-section h2{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#4da3ff;
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.about-section p{
+    color:#d6dbea;
+    line-height:1.8;
+}
+
+/* Developer Cards */
+
+.developer-card{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:25px;
+    margin-top:20px;
+    transition:.3s;
+}
+
+.developer-card:hover{
+    transform:translateY(-8px);
+    border-color:#3b82f6;
+    box-shadow:0 15px 35px rgba(59,130,246,.25);
+}
+
+.developer-image img{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #3b82f6;
+}
+
+.developer-info{
+    flex:1;
+}
+
+.developer-info h3{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.role{
+    display:inline-block;
+    padding:8px 18px;
+    background:#3b82f6;
+    border-radius:30px;
+    margin-bottom:18px;
+    font-size:14px;
+    font-weight:600;
+}
+
+.social-btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:12px 22px;
+    background:#3b82f6;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.social-btn:hover{
+    background:#2563eb;
+}
+
+@media(max-width:768px){
+
+    .developer-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .developer-image img{
+        width:140px;
+        height:140px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .developer-card{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .developer-image img{
+        width:140px;
+        height:140px;
+    }
+
+}
