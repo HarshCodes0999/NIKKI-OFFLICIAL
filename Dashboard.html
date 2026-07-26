@@ -1,98 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
 
-<link rel="stylesheet" href="style.css">
+<title>NIKKI AI Dashboard</title>
 
-<style>
-.card{
-    color:white;
-    text-align:center;
-}
+<link rel="stylesheet" href="Dashboard.css">
 
-.card h2{
-    margin-bottom:15px;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-.card p{
-    margin:10px 0;
-}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
+
 <body>
 
-<div class="container">
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="assets/LOGO.png" alt="NIKKI Logo">
+
+<h2>NIKKI AI</h2>
+
+</div>
+
+<ul>
+
+<li><i class="fa-solid fa-house"></i> Dashboard</li>
+
+<li><i class="fa-solid fa-comments"></i> Chat</li>
+
+<li><i class="fa-solid fa-brain"></i> Brain</li>
+
+<li><i class="fa-solid fa-memory"></i> Memory</li>
+
+<li><i class="fa-solid fa-list-check"></i> Tasks</li>
+
+<li><i class="fa-solid fa-bullseye"></i> Goals</li>
+
+<li><i class="fa-solid fa-microphone"></i> Voice</li>
+
+<li><i class="fa-solid fa-eye"></i> Vision</li>
+
+<li><i class="fa-solid fa-gear"></i> Settings</li>
+
+<li><i class="fa-solid fa-user"></i> Profile</li>
+
+<hr>
+
+<li onclick="location.href='Team.html'">👥 Team</li>
+
+<li onclick="location.href='About.html'">ℹ️ About</li>
+
+<li onclick="location.href='About.html'">📞 Contact</li>
+
+<li onclick="location.href='Privacy.html'">🔒 Privacy Policy</li>
+
+<li onclick="location.href='Terms.html'">📜 Terms & Conditions</li>
+
+<hr>
+
+<li id="logoutBtn">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<header>
+
+<h1>
+
+Welcome,
+
+<span id="userName">
+
+Loading...
+
+</span>
+
+👋
+
+</h1>
+
+</header>
+
+<div class="welcome-box">
+
+<h2>
+
+Welcome to NIKKI AI 🚀
+
+</h2>
+
+<p>
+
+Your Personal Artificial Intelligence Assistant is online and ready to help you.
+
+</p>
+
+<div class="status-row">
+
+<div class="status">
+
+<h3>AI Status</h3>
+
+<p class="online">
+
+🟢 Online
+
+</p>
+
+</div>
+
+<div class="status">
+
+<h3>Brain Modules</h3>
+
+<p>
+
+20 Active
+
+</p>
+
+</div>
+
+<div class="status">
+
+<h3>Memory</h3>
+
+<p>
+
+Ready
+
+</p>
+
+</div>
+
+<div class="status">
+
+<h3>Version</h3>
+
+<p>
+
+Alpha v1.0
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+Quick Access
+
+</h2>
+
+<div class="cards">
 
 <div class="card">
 
-<h2>🎉 Welcome</h2>
+<i class="fa-solid fa-brain"></i>
 
-<p id="username">Loading...</p>
+<h2>Brain</h2>
 
-<p id="useremail"></p>
+<p>
 
-<button onclick="logout()">
-Logout
+20 AI Modules are active and running.
+
+</p>
+
+<button class="action-btn">
+
+Open Brain
+
+</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-comments"></i>
+
+<h2>Chat</h2>
+
+<p>
+
+Start chatting with NIKKI AI.
+
+</p>
+
+<button class="action-btn">
+
+Open Chat
+
+</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-memory"></i>
+
+<h2>Memory</h2>
+
+<p>
+
+Manage AI Memory System.
+
+</p>
+
+<button class="action-btn">
+
+Open Memory
+
+</button>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-microchip"></i>
+
+<h2>System</h2>
+
+<p>
+
+Everything is running normally.
+
+</p>
+
+<button class="action-btn">
+
+View Status
+
 </button>
 
 </div>
 
 </div>
 
-<script type="module">
+</div>
 
-import { auth, db } from "./firebase.js";
-
-import {
-onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-import {
-doc,
-getDoc
-} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-window.logout = async ()=>{
-
-const { signOut } = await import(
-"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"
-);
-
-await signOut(auth);
-
-location.href="index.html";
-
-}
-
-onAuthStateChanged(auth,async(user)=>{
-
-if(!user){
-
-location.href="index.html";
-
-return;
-
-}
-
-const snap=await getDoc(doc(db,"users",user.uid));
-
-if(snap.exists()){
-
-document.getElementById("username").innerHTML=
-"👤 "+snap.data().name;
-
-document.getElementById("useremail").innerHTML=
-"📧 "+snap.data().email;
-
-}
-
-});
-
-</script>
+<script type="module" src="Dashboard.js"></script>
 
 </body>
+
 </html>
