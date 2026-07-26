@@ -1,5 +1,4 @@
 import { auth, db } from "./Firebase.js";
-import NIKKI from "./NIKKI.js";
 
 import {
     onAuthStateChanged,
@@ -11,98 +10,77 @@ import {
     getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-/* ==========================
-   Authentication Check
-========================== */
+/* ==========================================
+   DASHBOARD START
+========================================== */
+
+console.log("Dashboard Loaded");
+
+/* ==========================================
+   AUTH CHECK
+========================================== */
 
 onAuthStateChanged(auth, async (user) => {
 
     if (!user) {
 
         window.location.href = "index.html";
+
         return;
 
     }
-   /* ==========================
-   Boot NIKKI Engine
-========================== */
-
-try {
-
-    console.log("Starting NIKKI AI...");
-
-    const result = await NIKKI.boot();
-
-    if(result.success){
-
-        console.log("NIKKI AI Online");
-
-    }else{
-
-        console.error(result.error);
-
-    }
-
-}catch(error){
-
-    console.error("NIKKI Boot Failed:", error);
-
-}
 
     try {
 
         const userRef = doc(db, "users", user.uid);
+
         const userSnap = await getDoc(userRef);
+
+        const userName = document.getElementById("userName");
 
         if (userSnap.exists()) {
 
             const data = userSnap.data();
 
-            const userName = document.getElementById("userName");
-
-            if (userName) {
-                userName.textContent = data.name || "User";
-            }
+            userName.textContent = data.name || "User";
 
         } else {
 
-            const userName = document.getElementById("userName");
-
-            if (userName) {
-                userName.textContent = "User";
-            }
+            userName.textContent = "User";
 
         }
 
     } catch (error) {
 
-        console.error("Error loading user:", error);
+        console.error(error);
 
     }
 
 });
 
-/* ==========================
-   Logout
-========================== */
+/* ==========================================
+   LOGOUT
+========================================== */
 
 const logoutBtn = document.getElementById("logoutBtn");
 
-if (logoutBtn) {
+if(logoutBtn){
 
-    logoutBtn.addEventListener("click", async () => {
+    logoutBtn.addEventListener("click", async()=>{
 
-        try {
+        try{
 
             await signOut(auth);
 
-            window.location.href = "index.html";
+            window.location.href="index.html";
 
-        } catch (error) {
+        }
 
-            alert("Logout Failed");
+        catch(error){
 
             console.error(error);
+
+            alert("Logout Failed");
 
         }
 
@@ -110,82 +88,116 @@ if (logoutBtn) {
 
 }
 
-/* ==========================
-   Sidebar Navigation
-========================== */
+/* ==========================================
+   PAGE NAVIGATION
+========================================== */
 
-function openPage(id, page) {
+function openPage(id,page){
 
-    const element = document.getElementById(id);
+    const element=document.getElementById(id);
 
-    if (element) {
+    if(!element) return;
 
-        element.addEventListener("click", () => {
+    element.addEventListener("click",()=>{
 
-            window.location.href = page;
+        window.location.href=page;
 
-        });
-
-    }
+    });
 
 }
 
-openPage("dashboardBtn", "Dashboard.html");
+/* ==========================================
+   SIDEBAR
+========================================== */
 
-openPage("teamBtn", "Team.html");
+openPage("dashboardBtn","Dashboard.html");
 
-openPage("aboutBtn", "About.html");
+openPage("chatBtn","Chat.html");
 
-openPage("privacyBtn", "Privacy.html");
+openPage("teamBtn","Team.html");
 
-openPage("termsBtn", "Terms.html");
+openPage("aboutBtn","About.html");
 
-openPage("profileBtn", "Profile.html");
+openPage("profileBtn","Profile.html");
 
-/* ==========================
-   Future Pages
-========================== */
+openPage("privacyBtn","Privacy.html");
 
-function comingSoon(id, feature) {
+openPage("termsBtn","Terms.html");
 
-    const element = document.getElementById(id);
+/* ==========================================
+   SIDEBAR NAVIGATION
+========================================== */
 
-    if (element) {
+openPage("dashboardBtn","Dashboard.html");
 
-        element.addEventListener("click", () => {
+openPage("chatBtn","Chat.html");
 
-            alert(feature + " Coming Soon 🚀");
+openPage("brainBtn","Brain.html");
 
-        });
+openPage("memoryBtn","Memory.html");
 
-    }
+openPage("taskBtn","Tasks.html");
 
-}
+openPage("goalBtn","Goals.html");
 
-/* ==========================
-   Dashboard Buttons
-========================== */
+openPage("voiceBtn","Voice.html");
 
-openPage("chatBtn", "Chat.html");
+openPage("visionBtn","Vision.html");
 
-openPage("openChat", "Chat.html");
+openPage("settingsBtn","Settings.html");
 
-comingSoon("brainBtn", "Brain");
+openPage("profileBtn","Profile.html");
 
-comingSoon("memoryBtn", "Memory");
+openPage("teamBtn","Team.html");
 
-comingSoon("taskBtn", "Tasks");
+openPage("aboutBtn","About.html");
 
-comingSoon("goalBtn", "Goals");
+openPage("privacyBtn","Privacy.html");
 
-comingSoon("voiceBtn", "Voice");
+openPage("termsBtn","Terms.html");
 
-comingSoon("visionBtn", "Vision");
+/* ==========================================
+   QUICK ACCESS BUTTONS
+========================================== */
 
-comingSoon("settingsBtn", "Settings");
+openPage("openBrain","Brain.html");
 
-comingSoon("openBrain", "Brain");
+openPage("openChat","Chat.html");
 
-comingSoon("openMemory", "Memory");
+openPage("openMemory","Memory.html");
 
-comingSoon("openSystem", "System Status");
+openPage("openSystem","System.html");
+
+/* ==========================================
+   ACTIVE SIDEBAR
+========================================== */
+
+const sidebarItems = document.querySelectorAll(".sidebar li");
+
+sidebarItems.forEach(item=>{
+
+    item.addEventListener("click",()=>{
+
+        sidebarItems.forEach(i=>i.classList.remove("active"));
+
+        item.classList.add("active");
+
+    });
+
+});
+
+/* ==========================================
+   DASHBOARD INITIALIZED
+========================================== */
+
+console.log("====================================");
+
+console.log("NIKKI Dashboard Ready");
+
+console.log("Authentication : OK");
+
+console.log("Navigation : OK");
+
+console.log("Firebase : Connected");
+
+console.log("====================================");

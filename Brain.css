@@ -1,0 +1,623 @@
+/* ==========================================
+   NIKKI AI
+   Brain.css
+========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:#050816;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+}
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+}
+
+.glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    opacity:.35;
+
+}
+
+.glow-blue{
+
+    background:#00bfff;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.glow-purple{
+
+    background:#8a2be2;
+
+    bottom:-120px;
+
+    right:-120px;
+
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.brain-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:50px 20px;
+
+}
+
+.brain-card{
+
+    width:100%;
+
+    max-width:1400px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:0 0 35px rgba(0,191,255,.18);
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.brain-card h1{
+
+    text-align:center;
+
+    font-size:2.8rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    margin-bottom:12px;
+
+}
+
+.brain-card h1 i{
+
+    color:#00bfff;
+
+    margin-right:12px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#b8c7ff;
+
+    font-size:1rem;
+
+    margin-bottom:40px;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================
+   AI STATUS
+========================================== */
+
+.brain-status{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-bottom:45px;
+
+}
+
+.status-card{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.status-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00bfff;
+
+    box-shadow:0 0 25px rgba(0,191,255,.35);
+
+}
+
+.status-card i{
+
+    font-size:2.3rem;
+
+    color:#00bfff;
+
+    margin-bottom:15px;
+
+}
+
+.status-card h2{
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
+
+.status-card p{
+
+    font-size:1rem;
+
+    font-weight:500;
+
+    color:#35ff85;
+
+}
+
+/* ==========================================
+   NEURAL CORE
+========================================== */
+
+.brain-core{
+
+    margin-bottom:45px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 0 20px rgba(0,191,255,.15);
+
+}
+
+.brain-core h2{
+
+    color:#00bfff;
+
+    font-size:1.7rem;
+
+    margin-bottom:15px;
+
+}
+
+.brain-core p{
+
+    color:#d5dfff;
+
+    line-height:1.8;
+
+    font-size:.98rem;
+
+}
+
+/* ==========================================
+   MODULE SECTION
+========================================== */
+
+.modules-section{
+
+    margin-top:40px;
+
+}
+
+.modules-section h2{
+
+    text-align:center;
+
+    font-size:2rem;
+
+    color:#ffffff;
+
+    margin-bottom:30px;
+
+}
+
+.modules-section h2 i{
+
+    color:#00bfff;
+
+    margin-right:10px;
+
+}
+
+/* ==========================================
+   MODULE GRID
+========================================== */
+
+.modules-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+}
+
+/* ==========================================
+   MODULE CARD
+========================================== */
+
+.module-card{
+
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    backdrop-filter:blur(18px);
+
+    transition:.35s ease;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.module-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+.module-card:hover::before{
+
+    left:100%;
+
+}
+
+.module-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00bfff;
+
+    box-shadow:0 0 30px rgba(0,191,255,.35);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.module-card i{
+
+    font-size:2.4rem;
+
+    color:#00bfff;
+
+    margin-bottom:15px;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.module-card h3{
+
+    font-size:1.2rem;
+
+    color:#ffffff;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.module-card p{
+
+    color:#35ff85;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================
+   BRAIN INFORMATION
+========================================== */
+
+.brain-info{
+
+    margin-top:50px;
+
+}
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:25px;
+
+    margin-top:25px;
+
+}
+
+.info-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00bfff;
+
+    box-shadow:0 0 25px rgba(0,191,255,.30);
+
+}
+
+.info-card h3{
+
+    color:#00bfff;
+
+    margin-bottom:12px;
+
+    font-size:1.1rem;
+
+}
+
+.info-card p{
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.brain-footer{
+
+    margin-top:60px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    padding-top:35px;
+
+}
+
+.brain-btn{
+
+    display:inline-block;
+
+    margin:10px;
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    background:#00bfff;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.brain-btn:hover{
+
+    background:#0099dd;
+
+    transform:translateY(-3px);
+
+}
+
+.brain-footer p{
+
+    margin-top:25px;
+
+    color:#bfc7d5;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    .brain-card{
+
+        padding:25px;
+
+    }
+
+    .brain-card h1{
+
+        font-size:2rem;
+
+    }
+
+    .modules-grid,
+
+    .brain-status,
+
+    .info-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
