@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI Tasks</title>
+
+<link rel="stylesheet"
+href="Tasks.css">
+
+</head>
+
+<body>
+
+<div class="tasks-container">
+
+<header class="tasks-header">
+
+<h1>📋 NIKKI Tasks</h1>
+
+<p>
+
+Task Management & Productivity Center
+
+</p>
+
+</header>
+
+<!-- ==========================
+     TASK STATUS
+========================== -->
+
+<section class="task-status">
+
+<div class="status-card">
+
+<h3>Total Tasks</h3>
+
+<h2 id="totalTasks">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Completed</h3>
+
+<h2 id="completedTasks">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Pending</h3>
+
+<h2 id="pendingTasks">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Priority</h3>
+
+<h2 id="priorityTasks">
+
+0
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     ACTIONS
+========================== -->
+
+<section class="task-actions">
+
+<button id="addTask">
+
+➕ Add Task
+
+</button>
+
+<button id="clearTasks">
+
+🗑 Clear All
+
+</button>
+
+<button id="refreshTasks">
+
+🔄 Refresh
+
+</button>
+
+</section>
+
+  <!-- ==========================
+     TASK LIST
+========================== -->
+
+<section class="task-list-section">
+
+<h2>
+
+Task List
+
+</h2>
+
+<div id="taskList"
+class="task-list">
+
+<p>
+
+No tasks available...
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     QUICK TASK
+========================== -->
+
+<section class="quick-task">
+
+<h2>
+
+Quick Add
+
+</h2>
+
+<input
+
+id="taskInput"
+
+type="text"
+
+placeholder="Enter a new task...">
+
+<button id="saveTask">
+
+Save Task
+
+</button>
+
+</section>
+
+  <!-- ==========================
+     TASK ANALYTICS
+========================== -->
+
+<section class="task-analytics">
+
+<h2>
+
+Task Analytics
+
+</h2>
+
+<div class="analytics-grid">
+
+<div class="analytics-card">
+
+<h3>Today's Tasks</h3>
+
+<h2 id="todayTasks">
+
+0
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Completed Today</h3>
+
+<h2 id="todayCompleted">
+
+0
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Completion Rate</h3>
+
+<h2 id="completionRate">
+
+0%
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Productivity</h3>
+
+<h2 id="productivityScore">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     TASK HISTORY
+========================== -->
+
+<section class="task-history">
+
+<h2>
+
+Recent Activity
+
+</h2>
+
+<div
+
+id="taskHistory"
+
+class="task-history-list">
+
+<p>
+
+No activity yet...
+
+</p>
+
+</div>
+
+</section>
+
+  <!-- ==========================
+     TASK MODAL
+========================== -->
+
+<div id="taskModal"
+
+class="task-modal">
+
+<div class="task-modal-content">
+
+<span
+
+id="closeTaskModal"
+
+class="close-modal">
+
+✖
+
+</span>
+
+<h2>
+
+Task Details
+
+</h2>
+
+<div id="taskModalContent">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script
+
+type="module"
+
+src="TasksUI.js">
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI Goals</title>
+
+<link rel="stylesheet" href="Goals.css">
+
+</head>
+
+<body>
+
+<div class="goals-container">
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="goals-header">
+
+<h1>🎯 NIKKI Goals</h1>
+
+<p>
+
+Goal Planning & Achievement Center
+
+</p>
+
+</header>
+
+<!-- ==========================================
+     STATUS
+========================================== -->
+
+<section class="goal-status">
+
+<div class="status-card">
+
+<h3>Total Goals</h3>
+
+<h2 id="totalGoals">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Completed</h3>
+
+<h2 id="completedGoals">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Active</h3>
+
+<h2 id="activeGoals">
+
+0
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Success Rate</h3>
+
+<h2 id="goalRate">
+
+0%
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     ACTIONS
+========================================== -->
+
+<section class="goal-actions">
+
+<button id="addGoal">
+
+➕ Add Goal
+
+</button>
+
+<button id="clearGoals">
+
+🗑 Clear Goals
+
+</button>
+
+<button id="refreshGoals">
+
+🔄 Refresh
+
+</button>
+
+</section>
+
+<!-- ==========================================
+     GOAL LIST
+========================================== -->
+
+<section class="goal-list-section">
+
+<h2>
+
+Goal List
+
+</h2>
+
+<div
+
+id="goalList"
+
+class="goal-list">
+
+<p>
+
+No goals available...
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     QUICK GOAL
+========================================== -->
+
+<section class="quick-goal">
+
+<h2>
+
+Quick Goal
+
+</h2>
+
+<input
+
+id="goalInput"
+
+type="text"
+
+placeholder="Enter your new goal...">
+
+<button id="saveGoal">
+
+Save Goal
+
+</button>
+
+</section>
+
+<!-- ==========================================
+     PRIORITY GOALS
+========================================== -->
+
+<section class="priority-goals">
+
+<h2>
+
+Priority Goals
+
+</h2>
+
+<div class="priority-grid">
+
+<div class="priority-card">
+
+<h3>Main Goal</h3>
+
+<p id="mainGoal">
+
+None
+
+</p>
+
+</div>
+
+<div class="priority-card">
+
+<h3>Today's Goal</h3>
+
+<p id="todayGoal">
+
+None
+
+</p>
+
+</div>
+
+<div class="priority-card">
+
+<h3>Weekly Goal</h3>
+
+<p id="weeklyGoal">
+
+None
+
+</p>
+
+</div>
+
+<div class="priority-card">
+
+<h3>Monthly Goal</h3>
+
+<p id="monthlyGoal">
+
+None
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     GOAL ANALYTICS
+========================================== -->
+
+<section class="goal-analytics">
+
+<h2>
+
+Goal Analytics
+
+</h2>
+
+<div class="analytics-grid">
+
+<div class="analytics-card">
+
+<h3>Today's Goals</h3>
+
+<h2 id="todayGoals">
+
+0
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Completed Today</h3>
+
+<h2 id="todayCompleted">
+
+0
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Achievement</h3>
+
+<h2 id="achievementRate">
+
+0%
+
+</h2>
+
+</div>
+
+<div class="analytics-card">
+
+<h3>Productivity</h3>
+
+<h2 id="goalProductivity">
+
+0
+
+</h2>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     GOAL HISTORY
+========================================== -->
+
+<section class="goal-history">
+
+<h2>
+
+Recent Activity
+
+</h2>
+
+<div
+
+id="goalHistory"
+
+class="goal-history-list">
+
+<p>
+
+No activity yet...
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     MODAL
+========================================== -->
+
+<div
+
+id="goalModal"
+
+class="goal-modal">
+
+<div class="goal-modal-content">
+
+<span
+
+id="closeGoalModal"
+
+class="close-modal">
+
+✖
+
+</span>
+
+<h2>
+
+Goal Details
+
+</h2>
+
+<div id="goalModalContent">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script
+
+type="module"
+
+src="GoalsUI.js">
+
+</script>
+
+</body>
+
+</html>
