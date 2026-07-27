@@ -1,0 +1,1518 @@
+/* ==========================================
+   NIKKI GLOBAL CSS v1.0
+   PART 1 - FOUNDATION
+========================================== */
+
+/* ==========================================
+   ROOT VARIABLES
+========================================== */
+
+:root{
+
+/* Brand */
+
+--primary:#00D4FF;
+--secondary:#6C63FF;
+--accent:#00FFB3;
+
+/* Background */
+
+--bg:#0B1120;
+--bg2:#10182D;
+--surface:#151D31;
+--surface2:#1C2740;
+
+/* Text */
+
+--text:#FFFFFF;
+--text-light:#D9E3F0;
+--text-muted:#9AA8B5;
+
+/* Status */
+
+--success:#00FF88;
+--warning:#FFD54A;
+--danger:#FF4D6D;
+--info:#00D4FF;
+
+/* Glass */
+
+--glass:rgba(255,255,255,.08);
+--glass-border:rgba(255,255,255,.12);
+
+/* Radius */
+
+--radius-xs:8px;
+--radius-sm:12px;
+--radius-md:18px;
+--radius-lg:24px;
+--radius-xl:32px;
+
+/* Shadow */
+
+--shadow-sm:0 8px 18px rgba(0,0,0,.25);
+--shadow-md:0 14px 32px rgba(0,0,0,.35);
+--shadow-lg:0 24px 60px rgba(0,0,0,.45);
+
+/* Glow */
+
+--glow-blue:0 0 25px rgba(0,212,255,.30);
+--glow-purple:0 0 25px rgba(108,99,255,.35);
+
+/* Animation */
+
+--fast:.25s;
+--normal:.35s;
+--slow:.6s;
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:
+linear-gradient(180deg,#0B1120,#10182D);
+
+color:var(--text);
+
+font-family:
+
+"Poppins",
+"Segoe UI",
+sans-serif;
+
+min-height:100vh;
+
+overflow-x:hidden;
+
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+h1{
+
+font-size:42px;
+
+font-weight:700;
+
+}
+
+h2{
+
+font-size:32px;
+
+font-weight:700;
+
+}
+
+h3{
+
+font-size:24px;
+
+font-weight:600;
+
+}
+
+h4{
+
+font-size:20px;
+
+font-weight:600;
+
+}
+
+p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:var(--text-light);
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+var(--primary),
+
+var(--secondary)
+
+);
+
+border-radius:100px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary);
+
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container{
+
+width:min(1400px,95%);
+
+margin:auto;
+
+padding:30px;
+
+}
+
+.section{
+
+padding:60px 0;
+
+}
+
+/* ==========================================
+   COMMON SPACING
+========================================== */
+
+.mt-10{margin-top:10px;}
+.mt-20{margin-top:20px;}
+.mt-30{margin-top:30px;}
+.mt-40{margin-top:40px;}
+
+.mb-10{margin-bottom:10px;}
+.mb-20{margin-bottom:20px;}
+.mb-30{margin-bottom:30px;}
+.mb-40{margin-bottom:40px;}
+
+.p-10{padding:10px;}
+.p-20{padding:20px;}
+.p-30{padding:30px;}
+.p-40{padding:40px;}
+
+/* ==========================================
+   FLEX UTILITIES
+========================================== */
+
+.flex{
+
+display:flex;
+
+}
+
+.flex-center{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.flex-between{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.flex-column{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/* ==========================================
+   GRID
+========================================== */
+
+.grid{
+
+display:grid;
+
+gap:20px;
+
+}
+
+.grid-2{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:20px;
+
+}
+
+.grid-3{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.grid-4{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(4,1fr);
+
+gap:20px;
+
+}
+
+/* ==========================================
+   NIKKI GLOBAL CSS v1.0
+   PART 2 - COMPONENTS
+========================================== */
+
+/* ==========================================
+   GLASS CARD
+========================================== */
+
+.card{
+
+background:rgba(21,29,49,.88);
+
+border:1px solid var(--glass-border);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border-radius:var(--radius-md);
+
+padding:24px;
+
+box-shadow:var(--shadow-md);
+
+transition:all var(--normal);
+
+overflow:hidden;
+
+position:relative;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:var(--shadow-lg);
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.btn{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:10px;
+
+padding:14px 28px;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+border-radius:14px;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#fff;
+
+transition:all var(--normal);
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--primary),
+
+var(--secondary)
+
+);
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:var(--glow-blue);
+
+}
+
+.btn:active{
+
+transform:scale(.97);
+
+}
+
+.btn-outline{
+
+background:transparent;
+
+border:1px solid var(--primary);
+
+color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+input,
+
+textarea,
+
+select{
+
+width:100%;
+
+padding:15px;
+
+background:var(--surface);
+
+border:1px solid var(--glass-border);
+
+border-radius:14px;
+
+outline:none;
+
+color:#fff;
+
+font-size:15px;
+
+transition:all var(--normal);
+
+}
+
+input:focus,
+
+textarea:focus,
+
+select:focus{
+
+border-color:var(--primary);
+
+box-shadow:var(--glow-blue);
+
+}
+
+/* ==========================================
+   LABEL
+========================================== */
+
+label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-weight:600;
+
+color:var(--text-light);
+
+}
+
+/* ==========================================
+   FORM GROUP
+========================================== */
+
+.form-group{
+
+margin-bottom:22px;
+
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.badge{
+
+display:inline-block;
+
+padding:6px 14px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.badge-success{
+
+background:rgba(0,255,136,.15);
+
+color:var(--success);
+
+}
+
+.badge-danger{
+
+background:rgba(255,77,109,.15);
+
+color:var(--danger);
+
+}
+
+.badge-warning{
+
+background:rgba(255,213,74,.15);
+
+color:var(--warning);
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+overflow:hidden;
+
+border-radius:16px;
+
+}
+
+th{
+
+background:var(--surface2);
+
+padding:16px;
+
+text-align:left;
+
+}
+
+td{
+
+padding:16px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+inset:0;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.72);
+
+backdrop-filter:blur(10px);
+
+z-index:9999;
+
+}
+
+.modal-content{
+
+width:90%;
+
+max-width:700px;
+
+padding:30px;
+
+background:var(--surface);
+
+border-radius:22px;
+
+border:1px solid var(--glass-border);
+
+box-shadow:var(--shadow-lg);
+
+animation:popup .35s ease;
+
+}
+
+.close{
+
+position:absolute;
+
+top:18px;
+
+right:20px;
+
+font-size:24px;
+
+cursor:pointer;
+
+transition:var(--fast);
+
+}
+
+.close:hover{
+
+color:var(--primary);
+
+transform:rotate(90deg);
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.9);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   NIKKI GLOBAL CSS v1.0
+   PART 3 - 3D UI
+========================================== */
+
+/* ==========================================
+   GLASS EFFECT
+========================================== */
+
+.glass{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:22px;
+
+box-shadow:0 12px 40px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   3D CARD
+========================================== */
+
+.card-3d{
+
+position:relative;
+
+transform-style:preserve-3d;
+
+transition:transform .45s ease,
+box-shadow .45s ease;
+
+overflow:hidden;
+
+}
+
+.card-3d:hover{
+
+transform:
+
+perspective(1200px)
+
+rotateX(8deg)
+
+rotateY(-8deg)
+
+translateY(-12px)
+
+scale(1.02);
+
+box-shadow:
+
+0 30px 60px rgba(0,0,0,.45),
+
+0 0 35px rgba(0,212,255,.18);
+
+}
+
+/* ==========================================
+   GLOW BORDER
+========================================== */
+
+.glow-border{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.glow-border::before{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#00D4FF,
+
+#6C63FF,
+
+#00FFB3,
+
+#00D4FF
+
+);
+
+background-size:300%;
+
+animation:borderMove 6s linear infinite;
+
+z-index:-1;
+
+filter:blur(10px);
+
+}
+
+@keyframes borderMove{
+
+0%{background-position:0%}
+
+100%{background-position:300%}
+
+}
+
+/* ==========================================
+   FLOATING
+========================================== */
+
+.float{
+
+animation:float 5s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================
+   NEON TEXT
+========================================== */
+
+.neon{
+
+color:#fff;
+
+text-shadow:
+
+0 0 8px #00D4FF,
+
+0 0 20px #00D4FF,
+
+0 0 35px #6C63FF;
+
+}
+
+/* ==========================================
+   GRADIENT TEXT
+========================================== */
+
+.gradient-text{
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#00D4FF,
+
+#6C63FF,
+
+#00FFB3
+
+);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+/* ==========================================
+   HOVER LIFT
+========================================== */
+
+.hover-lift{
+
+transition:.35s;
+
+}
+
+.hover-lift:hover{
+
+transform:
+
+translateY(-10px)
+
+scale(1.03);
+
+}
+
+/* ==========================================
+   IMAGE ZOOM
+========================================== */
+
+.img-hover{
+
+overflow:hidden;
+
+border-radius:18px;
+
+}
+
+.img-hover img{
+
+transition:.5s;
+
+}
+
+.img-hover:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ==========================================
+   SOFT SHADOW
+========================================== */
+
+.shadow-soft{
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.30);
+
+}
+
+/* ==========================================
+   STRONG SHADOW
+========================================== */
+
+.shadow-strong{
+
+box-shadow:
+
+0 35px 70px rgba(0,0,0,.45);
+
+}
+
+/* ==========================================
+   BLUR BACKGROUND
+========================================== */
+
+.blur{
+
+backdrop-filter:blur(25px);
+
+}
+
+/* ==========================================
+   FADE ANIMATION
+========================================== */
+
+.fade{
+
+animation:fadeIn .6s ease;
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ==========================================
+   NIKKI GLOBAL CSS v1.0
+   PART 4 - FINAL
+========================================== */
+
+/* ==========================================
+   ANIMATED BACKGROUND
+========================================== */
+
+.bg-animated{
+
+background:
+linear-gradient(
+135deg,
+#0B1120,
+#151D31,
+#10182D,
+#0B1120
+);
+
+background-size:400% 400%;
+
+animation:bgMove 12s ease infinite;
+
+}
+
+@keyframes bgMove{
+
+0%{background-position:0% 50%;}
+
+50%{background-position:100% 50%;}
+
+100%{background-position:0% 50%;}
+
+}
+
+/* ==========================================
+   LOADER
+========================================== */
+
+.loader{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+border:5px solid rgba(255,255,255,.15);
+
+border-top:5px solid var(--primary);
+
+animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ==========================================
+   SKELETON
+========================================== */
+
+.skeleton{
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#1C2740,
+
+#263453,
+
+#1C2740
+
+);
+
+background-size:300%;
+
+animation:skeleton 1.5s infinite;
+
+border-radius:12px;
+
+}
+
+@keyframes skeleton{
+
+0%{background-position:0%;}
+
+100%{background-position:300%;}
+
+}
+
+/* ==========================================
+   RIPPLE
+========================================== */
+
+.ripple{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.ripple::after{
+
+content:"";
+
+position:absolute;
+
+width:0;
+
+height:0;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.25);
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+transition:.6s;
+
+}
+
+.ripple:active::after{
+
+width:350px;
+
+height:350px;
+
+opacity:0;
+
+}
+
+/* ==========================================
+   UTILITIES
+========================================== */
+
+.text-center{text-align:center;}
+
+.text-left{text-align:left;}
+
+.text-right{text-align:right;}
+
+.w-100{width:100%;}
+
+.h-100{height:100%;}
+
+.round{border-radius:50%;}
+
+.hidden{display:none;}
+
+.show{display:block;}
+
+.cursor{cursor:pointer;}
+
+.overflow-hidden{overflow:hidden;}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+.grid-4{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.grid-3{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.grid-2,
+
+.grid-3,
+
+.grid-4{
+
+grid-template-columns:1fr;
+
+}
+
+.container{
+
+padding:20px;
+
+}
+
+h1{
+
+font-size:32px;
+
+}
+
+h2{
+
+font-size:26px;
+
+}
+
+h3{
+
+font-size:20px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+body{
+
+font-size:14px;
+
+}
+
+.btn{
+
+width:100%;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+}
+
+/* ==========================================
+   GLOBAL JS SUPPORT
+========================================== */
+
+/* Cursor Glow */
+
+.cursor-glow{
+
+position:fixed;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:rgba(0,212,255,.35);
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+backdrop-filter:blur(8px);
+
+box-shadow:
+
+0 0 18px rgba(0,212,255,.45),
+
+0 0 40px rgba(108,99,255,.25);
+
+z-index:99999;
+
+transition:
+
+transform .08s linear,
+
+left .05s linear,
+
+top .05s linear;
+
+}
+
+/* Ripple */
+
+.ripple-effect{
+
+position:absolute;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.35);
+
+transform:scale(0);
+
+animation:ripple .6s linear;
+
+pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+/* Reveal */
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:
+
+opacity .7s ease,
+
+transform .7s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* Progress */
+
+.progress{
+
+width:100%;
+
+height:10px;
+
+background:#1C2740;
+
+border-radius:999px;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+width:0;
+
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+var(--primary),
+
+var(--accent)
+
+);
+
+transition:width 1.2s ease;
+
+}
+
+/* Toast */
+
+.toast{
+
+position:fixed;
+
+right:30px;
+
+bottom:30px;
+
+padding:15px 22px;
+
+background:rgba(21,29,49,.95);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-left:4px solid var(--primary);
+
+border-radius:14px;
+
+color:#fff;
+
+font-weight:600;
+
+box-shadow:var(--shadow-lg);
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:.35s;
+
+z-index:99999;
+
+}
+
+.toast.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.toast.success{
+
+border-left-color:var(--success);
+
+}
+
+.toast.warning{
+
+border-left-color:var(--warning);
+
+}
+
+.toast.error{
+
+border-left-color:var(--danger);
+
+}
+
+/* Loader */
+
+.global-loader{
+
+position:fixed;
+
+inset:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(8px);
+
+z-index:99998;
+
+}
+
+/* Parallax */
+
+.parallax{
+
+transition:transform .12s linear;
+
+will-change:transform;
+
+}
+
+/* Theme */
+
+body[data-theme="light"]{
+
+--bg:#F4F7FB;
+
+--bg2:#FFFFFF;
+
+--surface:#FFFFFF;
+
+--surface2:#EDF2F7;
+
+--text:#111827;
+
+--text-light:#374151;
+
+--text-muted:#6B7280;
+
+--glass:rgba(255,255,255,.65);
+
+--glass-border:rgba(0,0,0,.08);
+
+background:var(--bg);
+
+color:var(--text);
+
+}
+
+/* Disable Animation */
+
+.no-animation *{
+
+animation:none !important;
+
+transition:none !important;
+
+}
+/* ==========================================
+   END
+========================================== */
