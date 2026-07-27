@@ -1,0 +1,551 @@
+/* ==========================================
+   VISION PAGE
+========================================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Poppins,sans-serif;
+
+}
+
+body{
+
+background:#0b1120;
+
+color:#ffffff;
+
+min-height:100vh;
+
+}
+
+.vision-container{
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.vision-header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.vision-header h1{
+
+font-size:40px;
+
+font-weight:700;
+
+color:#00d4ff;
+
+margin-bottom:10px;
+
+}
+
+.vision-header p{
+
+font-size:17px;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.vision-status{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:35px;
+
+}
+
+.status-card{
+
+background:#151d31;
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.status-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 28px rgba(0,0,0,.35);
+
+}
+
+.status-card h3{
+
+font-size:16px;
+
+color:#9aa8b5;
+
+margin-bottom:10px;
+
+}
+
+.status-card h2{
+
+font-size:28px;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.vision-actions{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.vision-actions button{
+
+padding:14px 28px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#00d4ff,#6c63ff);
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.vision-actions button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 28px rgba(0,212,255,.45);
+
+}
+
+/* ==========================================
+   CAMERA
+========================================== */
+
+.camera-section{
+
+margin-bottom:40px;
+
+}
+
+.camera-section h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.camera-preview{
+
+background:#151d31;
+
+padding:20px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.08);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#cameraView{
+
+width:100%;
+
+max-width:900px;
+
+border-radius:15px;
+
+background:#000;
+
+}
+
+/* ==========================================
+   DETECTION
+========================================== */
+
+.detection-section{
+
+margin-bottom:40px;
+
+}
+
+.detection-section h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.detection-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.detect-card{
+
+background:#151d31;
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.detect-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.detect-card h3{
+
+margin-bottom:10px;
+
+color:#ffffff;
+
+}
+
+.detect-card p{
+
+font-size:15px;
+
+font-weight:600;
+
+color:#00ff88;
+
+}
+
+/* ==========================================
+   VISION ANALYTICS
+========================================== */
+
+.vision-analytics{
+
+margin-bottom:40px;
+
+}
+
+.vision-analytics h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.analytics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.analytics-card{
+
+background:#151d31;
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.analytics-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.analytics-card h3{
+
+font-size:16px;
+
+margin-bottom:10px;
+
+color:#9aa8b5;
+
+}
+
+.analytics-card h2{
+
+font-size:28px;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   SCAN HISTORY
+========================================== */
+
+.scan-history{
+
+margin-bottom:40px;
+
+}
+
+.scan-history h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.scan-history-list{
+
+background:#151d31;
+
+padding:20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+min-height:220px;
+
+overflow-y:auto;
+
+}
+
+.scan-history-list p{
+
+margin-bottom:12px;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   VISION MODAL
+========================================== */
+
+.vision-modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.vision-modal-content{
+
+background:#151d31;
+
+width:90%;
+
+max-width:700px;
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+animation:popup .3s ease;
+
+}
+
+.close-modal{
+
+position:absolute;
+
+right:20px;
+
+top:15px;
+
+font-size:24px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.close-modal:hover{
+
+color:#00d4ff;
+
+transform:rotate(90deg);
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.85);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.vision-header h1{
+
+font-size:30px;
+
+}
+
+.vision-status,
+
+.detection-grid,
+
+.analytics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.vision-actions{
+
+flex-direction:column;
+
+}
+
+.vision-actions button{
+
+width:100%;
+
+}
+
+.vision-modal-content{
+
+padding:20px;
+
+}
+
+}

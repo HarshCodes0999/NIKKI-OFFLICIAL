@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI System</title>
+
+<link rel="stylesheet" href="System.css">
+
+</head>
+
+<body>
+
+<div class="system-container">
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="system-header">
+
+        <h1>⚙ NIKKI System</h1>
+
+        <p>
+
+            AI Core Monitoring & System Control Center
+
+        </p>
+
+    </header>
+
+    <!-- ==========================
+         SYSTEM STATUS
+    =========================== -->
+
+    <section class="system-status">
+
+        <div class="status-card">
+
+            <h3>System Status</h3>
+
+            <h2 id="systemStatus">
+
+                🟢 Online
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>AI Status</h3>
+
+            <h2 id="aiStatus">
+
+                Active
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Brain Status</h3>
+
+            <h2 id="brainStatus">
+
+                Running
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Modules Loaded</h3>
+
+            <h2 id="loadedModules">
+
+                40
+
+            </h2>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         CONTROL BUTTONS
+    =========================== -->
+
+    <section class="system-actions">
+
+        <button id="refreshSystem">
+
+            🔄 Refresh
+
+        </button>
+
+        <button id="diagnosticsBtn">
+
+            📋 Diagnostics
+
+        </button>
+
+        <button id="systemReport">
+
+            📊 Report
+
+        </button>
+
+    </section>
+
+      <!-- ==========================
+         MODULE STATUS
+    =========================== -->
+
+    <section class="module-status">
+
+        <h2>
+
+            Brain Modules
+
+        </h2>
+
+        <div class="module-grid">
+
+            <div class="module-card">
+
+                <h3>🧠 Memory</h3>
+
+                <span id="memoryModuleStatus">
+
+                    🟢 Online
+
+                </span>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>🎤 Voice</h3>
+
+                <span id="voiceModuleStatus">
+
+                    🟢 Online
+
+                </span>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>👁 Vision</h3>
+
+                <span id="visionModuleStatus">
+
+                    🟢 Online
+
+                </span>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>🎯 Goals</h3>
+
+                <span id="goalModuleStatus">
+
+                    🟢 Online
+
+                </span>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>📋 Tasks</h3>
+
+                <span id="taskModuleStatus">
+
+                    🟢 Online
+
+                </span>
+
+            </div>
+
+            <div class="module-card">
+
+                <h3>⚙ Core</h3>
+
+                <span id="coreModuleStatus">
+
+                    🟢 Running
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         PERFORMANCE
+    =========================== -->
+
+    <section class="performance-section">
+
+        <h2>
+
+            Performance
+
+        </h2>
+
+        <div class="performance-grid">
+
+            <div class="performance-card">
+
+                <h3>CPU Usage</h3>
+
+                <h2 id="cpuUsage">
+
+                    0%
+
+                </h2>
+
+            </div>
+
+            <div class="performance-card">
+
+                <h3>Memory Usage</h3>
+
+                <h2 id="ramUsage">
+
+                    0 MB
+
+                </h2>
+
+            </div>
+
+            <div class="performance-card">
+
+                <h3>Network</h3>
+
+                <h2 id="networkStatus">
+
+                    Connected
+
+                </h2>
+
+            </div>
+
+            <div class="performance-card">
+
+                <h3>Runtime</h3>
+
+                <h2 id="runtime">
+
+                    00:00:00
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+      <!-- ==========================
+         SYSTEM INFORMATION
+    =========================== -->
+
+    <section class="system-information">
+
+        <h2>
+
+            System Information
+
+        </h2>
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <h3>Version</h3>
+
+                <p id="systemVersion">
+
+                    NIKKI v1.0.0
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Build</h3>
+
+                <p id="systemBuild">
+
+                    Stable
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Last Update</h3>
+
+                <p id="lastUpdate">
+
+                    ---
+
+                </p>
+
+            </div>
+
+            <div class="info-card">
+
+                <h3>Uptime</h3>
+
+                <p id="systemUptime">
+
+                    00:00:00
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         DIAGNOSTICS LOG
+    =========================== -->
+
+    <section class="diagnostics-section">
+
+        <h2>
+
+            Diagnostics Log
+
+        </h2>
+
+        <div id="diagnosticsLog" class="diagnostics-log">
+
+            <p>
+
+                System Ready...
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         LIVE EVENTS
+    =========================== -->
+
+    <section class="events-section">
+
+        <h2>
+
+            Live Events
+
+        </h2>
+
+        <div id="liveEvents" class="events-log">
+
+            <p>
+
+                Waiting for system events...
+
+            </p>
+
+        </div>
+
+    </section>
+
+      <!-- ==========================
+         SYSTEM REPORT MODAL
+    =========================== -->
+
+    <div id="systemModal" class="system-modal">
+
+        <div class="system-modal-content">
+
+            <span id="closeSystemModal" class="close-modal">
+
+                ✖
+
+            </span>
+
+            <h2>
+
+                System Report
+
+            </h2>
+
+            <div id="systemReportContent">
+
+                <p>
+
+                    Loading System Report...
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+         EXPORT REPORT
+    =========================== -->
+
+    <input
+
+    type="file"
+
+    id="systemImportFile"
+
+    accept=".json"
+
+    hidden>
+
+</div>
+
+<!-- ==========================
+     SYSTEM UI
+========================== -->
+
+<script type="module" src="SystemUI.js"></script>
+
+</body>
+
+</html>

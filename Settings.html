@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI AI Settings</title>
+
+<link rel="stylesheet"
+href="Settings.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="background">
+
+<div class="grid"></div>
+
+<div class="glow glow-blue"></div>
+
+<div class="glow glow-purple"></div>
+
+</div>
+
+<!-- Main Container -->
+
+<div class="settings-container">
+
+<header class="settings-header">
+
+<div>
+
+<h1>
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</h1>
+
+<p>
+
+Configure your NIKKI AI experience
+
+</p>
+
+</div>
+
+<a href="Dashboard.html" class="back-btn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Dashboard
+
+</a>
+
+</header>
+
+  <!-- ==========================================
+     AI SETTINGS
+========================================== -->
+
+<section class="settings-section">
+
+<h2>
+
+<i class="fa-solid fa-robot"></i>
+
+AI Settings
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>AI Mode</h3>
+
+<select id="aiMode">
+
+<option>Normal</option>
+
+<option>Smart</option>
+
+<option>Developer</option>
+
+</select>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Default Language</h3>
+
+<select id="language">
+
+<option>English</option>
+
+<option>Hindi</option>
+
+<option>Hinglish</option>
+
+</select>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Response Style</h3>
+
+<select id="responseStyle">
+
+<option>Balanced</option>
+
+<option>Professional</option>
+
+<option>Friendly</option>
+
+<option>Creative</option>
+
+</select>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Response Speed</h3>
+
+<select id="responseSpeed">
+
+<option>Fast</option>
+
+<option>Balanced</option>
+
+<option>Detailed</option>
+
+</select>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     NOTIFICATIONS
+========================================== -->
+
+<section class="settings-section">
+
+<h2>
+
+<i class="fa-solid fa-bell"></i>
+
+Notifications
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>Browser Notifications</h3>
+
+<label class="switch">
+
+<input type="checkbox" id="browserNotification">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Sound Effects</h3>
+
+<label class="switch">
+
+<input type="checkbox" id="soundEffects" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Reminder Alerts</h3>
+
+<label class="switch">
+
+<input type="checkbox" id="reminderAlerts" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+  <!-- ==========================================
+     NETWORK
+========================================== -->
+
+<section class="settings-section">
+
+<h2>
+
+<i class="fa-solid fa-wifi"></i>
+
+Network
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>Online Mode</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked id="onlineMode">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Auto Sync</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked id="autoSync">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<h3>API Connection</h3>
+
+<p class="status online">
+
+🟢 Connected
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     BACKUP
+========================================== -->
+
+<section class="settings-section">
+
+<h2>
+
+<i class="fa-solid fa-database"></i>
+
+Backup
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>Create Backup</h3>
+
+<button id="backupBtn">
+
+Create Backup
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Restore Backup</h3>
+
+<button id="restoreBtn">
+
+Restore
+
+</button>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Auto Backup</h3>
+
+<label class="switch">
+
+<input type="checkbox" checked id="autoBackup">
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     APPLICATION
+========================================== -->
+
+<section class="settings-section">
+
+<h2>
+
+<i class="fa-solid fa-circle-info"></i>
+
+Application
+
+</h2>
+
+<div class="settings-grid">
+
+<div class="setting-card">
+
+<h3>Version</h3>
+
+<p>v1.0 Alpha</p>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Build</h3>
+
+<p>2026.01</p>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Founder</h3>
+
+<p>Mr. Harsh Vardhan Singh Chouhan</p>
+
+</div>
+
+<div class="setting-card">
+
+<h3>Check Updates</h3>
+
+<button id="updateBtn">
+
+Check
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     SAVE SETTINGS
+========================================== -->
+
+<div class="save-section">
+
+<button id="saveSettings">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save Settings
+
+</button>
+
+</div>
+
+  <!-- ==========================================
+     NOTIFICATIONS
+========================================== -->
+
+<section class="settings-grid">
+
+<div class="setting-card">
+
+<i class="fa-solid fa-bell"></i>
+
+<h2>Notifications</h2>
+
+<label class="switch">
+
+<input type="checkbox" id="notifications" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<i class="fa-solid fa-volume-high"></i>
+
+<h2>Sound Effects</h2>
+
+<label class="switch">
+
+<input type="checkbox" id="soundEffects" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<i class="fa-solid fa-wifi"></i>
+
+<h2>Auto Sync</h2>
+
+<label class="switch">
+
+<input type="checkbox" id="autoSync" checked>
+
+<span class="slider"></span>
+
+</label>
+
+</div>
+
+<div class="setting-card">
+
+<i class="fa-solid fa-cloud"></i>
+
+<h2>Backup</h2>
+
+<button id="backupNow">
+
+Create Backup
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================================
+     APPLICATION
+========================================== -->
+
+<section class="settings-grid">
+
+<div class="setting-card">
+
+<i class="fa-solid fa-code-branch"></i>
+
+<h2>Version</h2>
+
+<p>Alpha v1.0</p>
+
+</div>
+
+<div class="setting-card">
+
+<i class="fa-solid fa-download"></i>
+
+<h2>Updates</h2>
+
+<button id="checkUpdates">
+
+Check Updates
+
+</button>
+
+</div>
+
+</section>
+
+<script type="module" src="SettingsUI.js"></script>
+
+</div>
+
+</body>
+
+</html>

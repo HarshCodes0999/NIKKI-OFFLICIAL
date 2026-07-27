@@ -1,0 +1,553 @@
+/* ==========================================
+   MEMORY PAGE
+========================================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Poppins,sans-serif;
+
+}
+
+body{
+
+background:#0b1120;
+
+color:#ffffff;
+
+min-height:100vh;
+
+}
+
+.memory-container{
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.memory-header{
+
+text-align:center;
+
+margin-bottom:30px;
+
+}
+
+.memory-header h1{
+
+font-size:38px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+color:#00d4ff;
+
+}
+
+.memory-header p{
+
+font-size:17px;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-section{
+
+display:flex;
+
+justify-content:center;
+
+margin-bottom:25px;
+
+}
+
+#searchMemory{
+
+width:100%;
+
+max-width:700px;
+
+padding:15px 20px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+background:#151d31;
+
+color:white;
+
+font-size:16px;
+
+}
+
+#searchMemory::placeholder{
+
+color:#9aa8b5;
+
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.action-buttons{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:35px;
+
+}
+
+.action-buttons button{
+
+padding:14px 28px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+color:#ffffff;
+
+background:linear-gradient(135deg,#00d4ff,#6c63ff);
+
+transition:.3s ease;
+
+box-shadow:0 8px 20px rgba(0,212,255,.25);
+
+}
+
+.action-buttons button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 28px rgba(0,212,255,.45);
+
+}
+
+.action-buttons button:active{
+
+transform:scale(.96);
+
+}
+
+/* ==========================================
+   MEMORY STATS
+========================================== */
+
+.memory-stats{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:35px;
+
+}
+
+.stat-card{
+
+background:#151d31;
+
+border-radius:20px;
+
+padding:25px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s ease;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.35);
+
+}
+
+.stat-card h3{
+
+font-size:16px;
+
+color:#9aa8b5;
+
+margin-bottom:12px;
+
+font-weight:500;
+
+}
+
+.stat-card h2{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   MEMORY OVERVIEW
+========================================== */
+
+.memory-overview{
+
+background:#151d31;
+
+padding:25px;
+
+border-radius:20px;
+
+margin-bottom:35px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.memory-overview h2{
+
+font-size:26px;
+
+color:#00d4ff;
+
+margin-bottom:10px;
+
+}
+
+.memory-overview p{
+
+font-size:15px;
+
+line-height:1.8;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   MEMORY SECTIONS
+========================================== */
+
+.recent-memories,
+.important-memories{
+
+margin-bottom:40px;
+
+}
+
+.recent-memories h2,
+.important-memories h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   MEMORY LIST
+========================================== */
+
+.memory-list{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:20px;
+
+}
+
+/* ==========================================
+   MEMORY CARD
+========================================== */
+
+.memory-card{
+
+background:#151d31;
+
+padding:20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s ease;
+
+cursor:pointer;
+
+}
+
+.memory-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 15px 30px rgba(0,0,0,.35);
+
+}
+
+.memory-card h3{
+
+font-size:20px;
+
+margin-bottom:12px;
+
+color:#00d4ff;
+
+}
+
+.memory-card p{
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#b6c2d1;
+
+margin-bottom:15px;
+
+}
+
+.memory-card span{
+
+font-size:13px;
+
+color:#8fa3bf;
+
+}
+
+/* ==========================================
+   EMPTY MEMORY
+========================================== */
+
+.empty-memory{
+
+text-align:center;
+
+padding:60px 20px;
+
+background:#151d31;
+
+border-radius:20px;
+
+border:1px dashed rgba(255,255,255,.15);
+
+margin-bottom:40px;
+
+}
+
+.empty-memory h2{
+
+font-size:28px;
+
+color:#00d4ff;
+
+margin-bottom:12px;
+
+}
+
+.empty-memory p{
+
+font-size:16px;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   MEMORY MODAL
+========================================== */
+
+.memory-modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.memory-modal-content{
+
+background:#151d31;
+
+width:90%;
+
+max-width:700px;
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+animation:popup .3s ease;
+
+}
+
+.memory-modal-content h2{
+
+color:#00d4ff;
+
+margin-bottom:20px;
+
+}
+
+.close-modal{
+
+position:absolute;
+
+right:20px;
+
+top:15px;
+
+font-size:24px;
+
+cursor:pointer;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.close-modal:hover{
+
+color:#00d4ff;
+
+transform:rotate(90deg);
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.85);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.memory-header h1{
+
+font-size:30px;
+
+}
+
+.memory-stats{
+
+grid-template-columns:1fr;
+
+}
+
+.memory-list{
+
+grid-template-columns:1fr;
+
+}
+
+.action-buttons{
+
+flex-direction:column;
+
+}
+
+.action-buttons button{
+
+width:100%;
+
+}
+
+.memory-modal-content{
+
+padding:20px;
+
+}
+
+}

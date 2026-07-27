@@ -1,0 +1,566 @@
+/* ==========================================
+   NIKKI AI
+   SETTINGS PAGE
+========================================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    font-family:"Poppins",sans-serif;
+
+    background:#050816;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+/* ==========================================
+   BACKGROUND
+========================================== */
+
+.background{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:-10;
+
+    overflow:hidden;
+
+}
+
+.grid{
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+
+    background-size:40px 40px;
+
+}
+
+.glow{
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    filter:blur(140px);
+
+    opacity:.35;
+
+}
+
+.glow-blue{
+
+    background:#00bfff;
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.glow-purple{
+
+    background:#8a2be2;
+
+    bottom:-120px;
+
+    right:-120px;
+
+}
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.settings-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+.settings-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+.settings-header h1{
+
+    font-size:2.6rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+}
+
+.settings-header h1 i{
+
+    color:#00bfff;
+
+    margin-right:10px;
+
+}
+
+.settings-header p{
+
+    color:#bfc8d8;
+
+    margin-top:8px;
+
+}
+
+.back-btn{
+
+    text-decoration:none;
+
+    color:#ffffff;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    padding:12px 22px;
+
+    border-radius:15px;
+
+    transition:.35s;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.back-btn:hover{
+
+    background:#00bfff;
+
+    color:#050816;
+
+    box-shadow:0 0 20px rgba(0,191,255,.5);
+
+}
+
+/* ==========================================
+   SETTINGS GRID
+========================================== */
+
+.settings-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+
+/* ==========================================
+   SETTING CARD
+========================================== */
+
+.setting-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:0 0 20px rgba(0,191,255,.08);
+
+}
+
+.setting-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00bfff;
+
+    box-shadow:0 0 30px rgba(0,191,255,.35);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.setting-card i{
+
+    font-size:2.5rem;
+
+    color:#00bfff;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.setting-card h2{
+
+    font-size:1.25rem;
+
+    color:#ffffff;
+
+    margin-bottom:18px;
+
+}
+
+.setting-card p{
+
+    color:#bfc8d8;
+
+    font-size:.95rem;
+
+}
+
+/* ==========================================
+   SELECT BOX
+========================================== */
+
+.setting-card select{
+
+    width:100%;
+
+    padding:12px 15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.10);
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-family:"Poppins",sans-serif;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.setting-card select:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+.setting-card select:focus{
+
+    border:1px solid #00bfff;
+
+    box-shadow:0 0 15px rgba(0,191,255,.35);
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.setting-card button{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#00bfff;
+
+    color:#ffffff;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.setting-card button:hover{
+
+    transform:translateY(-3px);
+
+    background:#0099ff;
+
+    box-shadow:0 0 20px rgba(0,191,255,.45);
+
+}
+
+/* ==========================================
+   TOGGLE SWITCH
+========================================== */
+
+.switch{
+
+    position:relative;
+
+    display:inline-block;
+
+    width:60px;
+
+    height:32px;
+
+}
+
+.switch input{
+
+    opacity:0;
+
+    width:0;
+
+    height:0;
+
+}
+
+.slider{
+
+    position:absolute;
+
+    inset:0;
+
+    background:#555;
+
+    border-radius:40px;
+
+    transition:.3s;
+
+}
+
+.slider::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:24px;
+
+    height:24px;
+
+    left:4px;
+
+    top:4px;
+
+    background:#ffffff;
+
+    border-radius:50%;
+
+    transition:.3s;
+
+}
+
+.switch input:checked + .slider{
+
+    background:#00bfff;
+
+}
+
+.switch input:checked + .slider::before{
+
+    transform:translateX(28px);
+
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.settings-header{
+
+    animation:fadeUp .6s ease;
+
+}
+
+.settings-grid{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#08111f;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00bfff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#33ccff;
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:900px){
+
+.settings-header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+
+}
+
+.settings-header h1{
+
+    font-size:2rem;
+
+}
+
+.settings-container{
+
+    padding:20px;
+
+}
+
+.settings-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.back-btn{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.settings-header h1{
+
+    font-size:1.7rem;
+
+}
+
+.setting-card{
+
+    padding:22px;
+
+}
+
+.setting-card h2{
+
+    font-size:1.05rem;
+
+}
+
+.setting-card i{
+
+    font-size:2rem;
+
+}
+
+.setting-card select,
+
+.setting-card button{
+
+    font-size:14px;
+
+}
+
+}

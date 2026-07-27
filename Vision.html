@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI Vision</title>
+
+<link rel="stylesheet" href="Vision.css">
+
+</head>
+
+<body>
+
+<div class="vision-container">
+
+<header class="vision-header">
+
+<h1>👁 NIKKI Vision</h1>
+
+<p>
+
+Vision AI & Camera Processing Center
+
+</p>
+
+</header>
+
+<!-- ==========================
+     STATUS
+========================== -->
+
+<section class="vision-status">
+
+<div class="status-card">
+
+<h3>Vision Status</h3>
+
+<h2 id="visionStatus">
+
+🟢 Online
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Camera</h3>
+
+<h2 id="cameraStatus">
+
+Ready
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Detection</h3>
+
+<h2 id="detectionStatus">
+
+Active
+
+</h2>
+
+</div>
+
+<div class="status-card">
+
+<h3>Objects</h3>
+
+<h2 id="objectCount">
+
+0
+
+</h2>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     BUTTONS
+========================== -->
+
+<section class="vision-actions">
+
+<button id="startCamera">
+
+📷 Start Camera
+
+</button>
+
+<button id="stopCamera">
+
+⏹ Stop Camera
+
+</button>
+
+<button id="scanImage">
+
+🔍 Scan
+
+</button>
+
+</section>
+
+  <!-- ==========================
+     CAMERA
+========================== -->
+
+<section class="camera-section">
+
+<h2>
+
+Camera Preview
+
+</h2>
+
+<div class="camera-preview">
+
+<video
+
+id="cameraView"
+
+autoplay
+
+playsinline
+
+muted>
+
+</video>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     DETECTION
+========================== -->
+
+<section class="detection-section">
+
+<h2>
+
+Vision Detection
+
+</h2>
+
+<div class="detection-grid">
+
+<div class="detect-card">
+
+<h3>Objects</h3>
+
+<p id="objectsDetected">
+
+None
+
+</p>
+
+</div>
+
+<div class="detect-card">
+
+<h3>Faces</h3>
+
+<p id="facesDetected">
+
+0
+
+</p>
+
+</div>
+
+<div class="detect-card">
+
+<h3>Text</h3>
+
+<p id="ocrText">
+
+Waiting...
+
+</p>
+
+</div>
+
+<div class="detect-card">
+
+<h3>Colors</h3>
+
+<p id="dominantColor">
+
+Unknown
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+      <!-- ==========================
+         VISION ANALYTICS
+    =========================== -->
+
+    <section class="vision-analytics">
+
+        <h2>
+
+            Vision Analytics
+
+        </h2>
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <h3>Total Scans</h3>
+
+                <h2 id="totalScans">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Objects Found</h3>
+
+                <h2 id="totalObjects">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Faces Found</h3>
+
+                <h2 id="totalFaces">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Accuracy</h3>
+
+                <h2 id="visionAccuracy">
+
+                    100%
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         SCAN HISTORY
+    =========================== -->
+
+    <section class="scan-history">
+
+        <h2>
+
+            Scan History
+
+        </h2>
+
+        <div id="scanHistory" class="scan-history-list">
+
+            <p>
+
+                No scans available...
+
+            </p>
+
+        </div>
+
+    </section>
+    

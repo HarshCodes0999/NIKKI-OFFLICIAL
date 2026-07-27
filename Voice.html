@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI Voice</title>
+
+<link rel="stylesheet" href="Voice.css">
+
+</head>
+
+<body>
+
+<div class="voice-container">
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="voice-header">
+
+        <h1>🎤 NIKKI Voice</h1>
+
+        <p>
+
+            Voice Recognition & Speech Control Center
+
+        </p>
+
+    </header>
+
+    <!-- ==========================
+         VOICE STATUS
+    =========================== -->
+
+    <section class="voice-status">
+
+        <div class="status-card">
+
+            <h3>Voice Status</h3>
+
+            <h2 id="voiceStatus">
+
+                🟢 Online
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Microphone</h3>
+
+            <h2 id="micStatus">
+
+                Ready
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Language</h3>
+
+            <h2 id="voiceLanguage">
+
+                English
+
+            </h2>
+
+        </div>
+
+        <div class="status-card">
+
+            <h3>Voice Type</h3>
+
+            <h2 id="voiceType">
+
+                Female
+
+            </h2>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         CONTROLS
+    =========================== -->
+
+    <section class="voice-actions">
+
+        <button id="startVoice">
+
+            🎙 Start Listening
+
+        </button>
+
+        <button id="stopVoice">
+
+            ⏹ Stop
+
+        </button>
+
+        <button id="testVoice">
+
+            🔊 Test Voice
+
+        </button>
+
+    </section>
+
+      <!-- ==========================
+         LIVE VOICE
+    =========================== -->
+
+    <section class="voice-live">
+
+        <h2>
+
+            Live Conversation
+
+        </h2>
+
+        <div id="voiceOutput" class="voice-output">
+
+            Waiting for voice input...
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         VOICE SETTINGS
+    =========================== -->
+
+    <section class="voice-settings">
+
+        <h2>
+
+            Voice Settings
+
+        </h2>
+
+        <div class="setting-grid">
+
+            <div class="setting-card">
+
+                <h3>Recognition</h3>
+
+                <p id="recognitionStatus">
+
+                    Enabled
+
+                </p>
+
+            </div>
+
+            <div class="setting-card">
+
+                <h3>Speech Output</h3>
+
+                <p id="speechStatus">
+
+                    Enabled
+
+                </p>
+
+            </div>
+
+            <div class="setting-card">
+
+                <h3>Noise Filter</h3>
+
+                <p id="noiseFilter">
+
+                    Active
+
+                </p>
+
+            </div>
+
+            <div class="setting-card">
+
+                <h3>Wake Word</h3>
+
+                <p>
+
+                    NIKKI
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+      <!-- ==========================
+         VOICE HISTORY
+    =========================== -->
+
+    <section class="voice-history">
+
+        <h2>
+
+            Voice History
+
+        </h2>
+
+        <div id="voiceHistory" class="voice-history-list">
+
+            <p>
+
+                No conversations yet...
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         VOICE ANALYTICS
+    =========================== -->
+
+    <section class="voice-analytics">
+
+        <h2>
+
+            Voice Analytics
+
+        </h2>
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <h3>Total Commands</h3>
+
+                <h2 id="totalCommands">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Successful</h3>
+
+                <h2 id="successfulCommands">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Accuracy</h3>
+
+                <h2 id="voiceAccuracy">
+
+                    100%
+
+                </h2>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h3>Response Time</h3>
+
+                <h2 id="responseTime">
+
+                    0 ms
+
+                </h2>
+
+            </div>
+
+        </div>
+
+    </section>
+
+      <!-- ==========================
+         VOICE MODAL
+    =========================== -->
+
+    <div id="voiceModal" class="voice-modal">
+
+        <div class="voice-modal-content">
+
+            <span id="closeVoiceModal" class="close-modal">
+
+                ✖
+
+            </span>
+
+            <h2>
+
+                Voice Details
+
+            </h2>
+
+            <div id="voiceModalContent">
+
+                Loading...
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     VOICE UI
+========================== -->
+
+<script type="module" src="VoiceUI.js"></script>
+
+</body>
+
+</html>

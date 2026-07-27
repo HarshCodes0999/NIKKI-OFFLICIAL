@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NIKKI Memory</title>
+
+<link rel="stylesheet" href="Memory.css">
+
+</head>
+
+<body>
+
+<div class="memory-container">
+
+    <!-- ==========================
+         HEADER
+    =========================== -->
+
+    <header class="memory-header">
+
+        <h1>🧠 NIKKI Memory</h1>
+
+        <p>
+            Store, Recall and Manage AI Memories
+        </p>
+
+    </header>
+
+    <!-- ==========================
+         SEARCH BAR
+    =========================== -->
+
+    <section class="search-section">
+
+        <input
+
+        type="text"
+
+        id="searchMemory"
+
+        placeholder="Search Memories...">
+
+    </section>
+
+    <!-- ==========================
+         ACTION BUTTONS
+    =========================== -->
+
+    <section class="action-buttons">
+
+        <button id="addMemory">
+
+            ➕ Add Memory
+
+        </button>
+
+        <button id="clearMemory">
+
+            🗑 Clear
+
+        </button>
+
+        <button id="exportMemory">
+
+            💾 Export
+
+        </button>
+
+        <button id="importMemory">
+
+            📥 Import
+
+        </button>
+
+    </section>
+
+      <!-- ==========================
+         MEMORY STATISTICS
+    =========================== -->
+
+    <section class="memory-stats">
+
+        <div class="stat-card">
+
+            <h3>Total Memories</h3>
+
+            <h2 id="totalMemories">
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Today's Memories</h3>
+
+            <h2 id="todayMemories">
+
+                0
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Storage Used</h3>
+
+            <h2 id="storageUsed">
+
+                0 KB
+
+            </h2>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3>Status</h3>
+
+            <h2 id="memoryStatus">
+
+                🟢 Online
+
+            </h2>
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         MEMORY OVERVIEW
+    =========================== -->
+
+    <section class="memory-overview">
+
+        <h2>
+
+            Memory Overview
+
+        </h2>
+
+        <p>
+
+            View your stored memories, recall information and manage your AI knowledge base.
+
+        </p>
+
+    </section>
+
+      <!-- ==========================
+         RECENT MEMORIES
+    =========================== -->
+
+    <section class="recent-memories">
+
+        <h2>
+
+            📚 Recent Memories
+
+        </h2>
+
+        <div id="memoryList" class="memory-list">
+
+            <!-- Memory Cards Will Appear Here -->
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         IMPORTANT MEMORIES
+    =========================== -->
+
+    <section class="important-memories">
+
+        <h2>
+
+            ⭐ Important Memories
+
+        </h2>
+
+        <div id="importantMemoryList" class="memory-list">
+
+            <!-- Important Memory Cards -->
+
+        </div>
+
+    </section>
+
+    <!-- ==========================
+         EMPTY STATE
+    =========================== -->
+
+    <section
+    id="emptyMemory"
+    class="empty-memory">
+
+        <h2>
+
+            🧠 No Memories Found
+
+        </h2>
+
+        <p>
+
+            Start storing memories to build NIKKI's intelligence.
+
+        </p>
+
+    </section>
+
+      <!-- ==========================
+         MEMORY DETAILS MODAL
+    =========================== -->
+
+    <div id="memoryModal" class="memory-modal">
+
+        <div class="memory-modal-content">
+
+            <span id="closeMemoryModal" class="close-modal">
+
+                ✖
+
+            </span>
+
+            <h2>
+
+                Memory Details
+
+            </h2>
+
+            <div id="memoryDetails">
+
+                <!-- Memory Information -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+         IMPORT MEMORY
+    =========================== -->
+
+    <input
+
+    type="file"
+
+    id="memoryImportFile"
+
+    accept=".json"
+
+    hidden>
+
+</div>
+
+<!-- ==========================
+     MEMORY UI
+========================== -->
+
+<script type="module" src="MemoryUI.js"></script>
+
+</body>
+
+</html>

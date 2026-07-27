@@ -1,0 +1,541 @@
+/* ==========================================
+   VOICE PAGE
+========================================== */
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:Poppins,sans-serif;
+
+}
+
+body{
+
+background:#0b1120;
+
+color:#ffffff;
+
+min-height:100vh;
+
+}
+
+.voice-container{
+
+width:95%;
+
+max-width:1400px;
+
+margin:auto;
+
+padding:30px;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.voice-header{
+
+text-align:center;
+
+margin-bottom:35px;
+
+}
+
+.voice-header h1{
+
+font-size:40px;
+
+font-weight:700;
+
+color:#00d4ff;
+
+margin-bottom:10px;
+
+}
+
+.voice-header p{
+
+font-size:17px;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.voice-status{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+margin-bottom:35px;
+
+}
+
+.status-card{
+
+background:#151d31;
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.status-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 28px rgba(0,0,0,.35);
+
+}
+
+.status-card h3{
+
+font-size:16px;
+
+color:#9aa8b5;
+
+margin-bottom:10px;
+
+}
+
+.status-card h2{
+
+font-size:28px;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.voice-actions{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+margin-bottom:40px;
+
+}
+
+.voice-actions button{
+
+padding:14px 28px;
+
+border:none;
+
+outline:none;
+
+border-radius:15px;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#00d4ff,#6c63ff);
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.voice-actions button:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 28px rgba(0,212,255,.45);
+
+}
+
+/* ==========================================
+   LIVE VOICE
+========================================== */
+
+.voice-live{
+
+margin-bottom:40px;
+
+}
+
+.voice-live h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.voice-output{
+
+background:#151d31;
+
+padding:25px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+min-height:180px;
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   SETTINGS
+========================================== */
+
+.voice-settings{
+
+margin-bottom:40px;
+
+}
+
+.voice-settings h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.setting-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.setting-card{
+
+background:#151d31;
+
+padding:20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.setting-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.setting-card h3{
+
+margin-bottom:10px;
+
+color:#ffffff;
+
+}
+
+.setting-card p{
+
+font-size:15px;
+
+color:#00ff88;
+
+font-weight:600;
+
+}
+
+/* ==========================================
+   VOICE HISTORY
+========================================== */
+
+.voice-history{
+
+margin-bottom:40px;
+
+}
+
+.voice-history h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.voice-history-list{
+
+background:#151d31;
+
+padding:20px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+min-height:220px;
+
+overflow-y:auto;
+
+}
+
+.voice-history-list p{
+
+margin-bottom:12px;
+
+font-size:15px;
+
+line-height:1.7;
+
+color:#b6c2d1;
+
+}
+
+/* ==========================================
+   ANALYTICS
+========================================== */
+
+.voice-analytics{
+
+margin-bottom:40px;
+
+}
+
+.voice-analytics h2{
+
+font-size:28px;
+
+margin-bottom:20px;
+
+color:#00d4ff;
+
+}
+
+.analytics-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+
+}
+
+.analytics-card{
+
+background:#151d31;
+
+padding:22px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.analytics-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.analytics-card h3{
+
+font-size:16px;
+
+margin-bottom:10px;
+
+color:#9aa8b5;
+
+}
+
+.analytics-card h2{
+
+font-size:28px;
+
+color:#00d4ff;
+
+}
+
+/* ==========================================
+   VOICE MODAL
+========================================== */
+
+.voice-modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(8px);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999;
+
+}
+
+.voice-modal-content{
+
+background:#151d31;
+
+width:90%;
+
+max-width:700px;
+
+padding:30px;
+
+border-radius:20px;
+
+border:1px solid rgba(255,255,255,.08);
+
+position:relative;
+
+animation:popup .3s ease;
+
+}
+
+.close-modal{
+
+position:absolute;
+
+right:20px;
+
+top:15px;
+
+font-size:24px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.close-modal:hover{
+
+color:#00d4ff;
+
+transform:rotate(90deg);
+
+}
+
+@keyframes popup{
+
+from{
+
+opacity:0;
+
+transform:scale(.85);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.voice-header h1{
+
+font-size:30px;
+
+}
+
+.voice-status,
+
+.setting-grid,
+
+.analytics-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.voice-actions{
+
+flex-direction:column;
+
+}
+
+.voice-actions button{
+
+width:100%;
+
+}
+
+.voice-modal-content{
+
+padding:20px;
+
+}
+
+}
