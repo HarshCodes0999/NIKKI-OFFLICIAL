@@ -1,7 +1,8 @@
 /**
  * ==========================================
  * NIKKI AI
- * Main Engine V2
+ * Core Engine V3
+ * Part 1
  * ==========================================
  */
 
@@ -9,345 +10,734 @@ class Nikki {
 
     constructor(){
 
+        /* ==========================
+           AI INFORMATION
+        ========================== */
+
         this.name = "NIKKI";
 
-        this.version = "2.0.0";
+        this.version = "3.0.0";
 
-        this.status = "OFFLINE";
+        this.author = "NIKKI Team";
 
-        this.modules = [];
+        /* ==========================
+           SYSTEM STATE
+        ========================== */
 
-        this.registry = {};
+        this.state = "OFFLINE";
 
-    }
+        this.bootTime = null;
 
-}
+        this.lastActivity = null;
 
-const NIKKI = new Nikki();
+        /* ==========================
+           MODULE SYSTEM
+        ========================== */
 
-export default NIKKI;
+        this.modules = new Map();
 
-/* ==========================================================
-   REGISTER MODULE
-========================================================== */
+        this.totalModules = 0;
 
-register(name, module){
+        /* ==========================
+           EVENT SYSTEM
+        ========================== */
 
-    if(!name || !module){
+        this.events = new Map();
 
-        console.error("[NIKKI] Invalid Module");
+        /* ==========================
+           DEBUG
+        ========================== */
 
-        return false;
+        this.debug = true;
 
-    }
-
-    this.registry[name] = module;
-
-    this.modules.push(module);
-
-    console.log("Loaded :", name);
-
-    return true;
-
-}
-
-/* ==========================================================
-   GET MODULE
-========================================================== */
-
-get(name){
-
-    return this.registry[name] || null;
-
-}
-
-/* ==========================================================
-   HAS MODULE
-========================================================== */
-
-has(name){
-
-    return this.registry.hasOwnProperty(name);
-
-}
-
-/* ==========================================================
-   REMOVE MODULE
-========================================================== */
-
-remove(name){
-
-    if(!this.has(name)){
-
-        return false;
+        this.logs = [];
 
     }
 
-    delete this.registry[name];
+    /* =====================================
+       LOGGER
+    ===================================== */
 
-    this.modules = this.modules.filter(
+    log(type,message){
 
-        module => module !== this.registry[name]
+        const entry={
 
-    );
+            type,
 
-    return true;
+            message,
 
-}
+            time:new Date()
 
-/* ==========================================================
-   TOTAL MODULES
-========================================================== */
+        };
 
-totalModules(){
+        this.logs.push(entry);
 
-    return Object.keys(this.registry).length;
+        if(this.debug){
 
-}
+            console.log(
 
-/* ==========================================================
-   BOOT ENGINE
-========================================================== */
+                `[${type}]`,
 
-async boot(){
+                message
 
-    console.log("");
+            );
 
-    console.log("===================================");
+        }
 
-    console.log("Starting NIKKI AI...");
+    }
 
-    console.log("Version :", this.version);
+    /* =====================================
+       REGISTER MODULE
+    ===================================== */
 
-    console.log("===================================");
+    register(name,module){
 
-    this.status = "BOOTING";
+        if(!name){
 
-    try{
+            this.log(
 
-        for(const name in this.registry){
+                "ERROR",
 
-            const module = this.registry[name];
+                "Module name missing"
 
-            if(module && typeof module.initialize === "function"){
+            );
 
-                await module.initialize();
+            return false;
+
+        }
+
+        if(!module){
+
+            this.log(
+
+                "ERROR",
+
+                `${name} is null`
+
+            );
+
+            return false;
+
+        }
+
+        if(this.modules.has(name)){
+
+            this.log(
+
+                "WARNING",
+
+                `${name} already registered`
+
+            );
+
+            return false;
+
+        }
+
+        this.modules.set(name,module);
+
+        this.totalModules=this.modules.size;
+
+        this.log(
+
+            "LOAD",
+
+            `${name} loaded`
+
+        );
+
+        return true;
+
+    }
+
+    /* =====================================
+       REMOVE MODULE
+    ===================================== */
+
+    remove(name){
+
+        if(!this.modules.has(name)){
+
+            return false;
+
+        }
+
+        this.modules.delete(name);
+
+        this.totalModules=this.modules.size;
+
+        this.log(
+
+            "REMOVE",
+
+            `${name} removed`
+
+        );
+
+        return true;
+
+    }
+
+    /* =====================================
+       GET MODULE
+    ===================================== */
+
+    get(name){
+
+        return this.modules.get(name)||null;
+
+    }
+
+    /* =====================================
+       HAS MODULE
+    ===================================== */
+
+    has(name){
+
+        return this.modules.has(name);
+
+    }
+
+    /* =====================================
+       REGISTER MULTIPLE MODULES
+    ===================================== */
+
+    registerModules(...modules){
+
+        modules.forEach(module=>{
+
+            if(!module) return;
+
+            const name=
+
+                module.name ||
+
+                module.constructor.name;
+
+            this.register(
+
+                name,
+
+                module
+
+            );
+
+        });
+
+    }
+
+      /* =====================================
+       BOOT ENGINE
+    ===================================== */
+
+    async boot(){
+
+        if(this.state !== "OFFLINE"){
+
+            this.log(
+
+                "WARNING",
+
+                "NIKKI already running"
+
+            );
+
+            return false;
+
+        }
+
+        this.state = "BOOTING";
+
+        this.bootTime = Date.now();
+
+        this.log(
+
+            "SYSTEM",
+
+            "Boot sequence started"
+
+        );
+
+        for(const [name,module] of this.modules){
+
+            if(
+
+                module &&
+
+                typeof module.initialize === "function"
+
+            ){
+
+                try{
+
+                    await module.initialize();
+
+                    this.log(
+
+                        "INIT",
+
+                        `${name} initialized`
+
+                    );
+
+                }
+
+                catch(error){
+
+                    this.log(
+
+                        "ERROR",
+
+                        `${name} failed`
+
+                    );
+
+                }
 
             }
 
         }
 
-        this.status = "ONLINE";
+        this.state = "ONLINE";
 
-        console.log("");
+        this.log(
 
-        console.log("NIKKI AI ONLINE");
+            "SYSTEM",
 
-        console.log("Modules :", this.totalModules());
+            "NIKKI ONLINE"
 
-        console.log("");
+        );
 
-        return{
-
-            success:true,
-
-            status:this.status,
-
-            totalModules:this.totalModules()
-
-        };
+        return true;
 
     }
 
-    catch(error){
+    /* =====================================
+       SHUTDOWN
+    ===================================== */
 
-        this.status="FAILED";
+    async shutdown(){
 
-        console.error(error);
+        this.state = "SHUTDOWN";
 
-        return{
+        for(const [name,module] of this.modules){
 
-            success:false,
+            if(
 
-            error:error.message
+                module &&
 
-        };
+                typeof module.shutdown==="function"
+
+            ){
+
+                try{
+
+                    await module.shutdown();
+
+                }
+
+                catch(error){
+
+                    this.log(
+
+                        "ERROR",
+
+                        error.message
+
+                    );
+
+                }
+
+            }
+
+        }
+
+        this.state = "OFFLINE";
+
+        this.log(
+
+            "SYSTEM",
+
+            "NIKKI OFFLINE"
+
+        );
 
     }
 
-}
+    /* =====================================
+       RESTART
+    ===================================== */
 
-/* ==========================================================
-   SYSTEM INFORMATION
-========================================================== */
+    async restart(){
 
-info(){
+        await this.shutdown();
 
-    return{
+        return await this.boot();
 
-        name:this.name,
+    }
 
-        version:this.version,
+    /* =====================================
+       ASK
+    ===================================== */
 
-        status:this.status,
+    async ask(input){
 
-        totalModules:this.totalModules()
+        if(this.state !== "ONLINE"){
 
-    };
+            return{
 
-}
+                success:false,
 
-/* ==========================================================
-   SHUTDOWN
-========================================================== */
+                response:
 
-async shutdown(){
+                "NIKKI is offline."
 
-    console.log("");
+            };
 
-    console.log("Stopping NIKKI AI...");
+        }
 
-    for(const name in this.registry){
+        this.lastActivity = Date.now();
 
-        const module = this.registry[name];
+        return await this.process(input);
 
-        if(module && typeof module.shutdown === "function"){
+    }
 
-            await module.shutdown();
+    /* =====================================
+       PROCESS
+    ===================================== */
+
+    async process(input){
+
+        try{
+
+            /* Memory */
+
+            const memory =
+
+                this.get("Memory");
+
+            if(
+
+                memory &&
+
+                typeof memory.store==="function"
+
+            ){
+
+                await memory.store(input);
+
+            }
+
+            /* Context */
+
+            const context =
+
+                this.get("ContextManager");
+
+            if(
+
+                context &&
+
+                typeof context.update==="function"
+
+            ){
+
+                await context.update(input);
+
+            }
+
+            /* Reasoning */
+
+            const reasoning =
+
+                this.get("Reasoning");
+
+            let thought = input;
+
+            if(
+
+                reasoning &&
+
+                typeof reasoning.process==="function"
+
+            ){
+
+                thought =
+
+                await reasoning.process(input);
+
+            }
+
+            /* Emotion */
+
+            const emotion =
+
+                this.get("Emotion");
+
+            if(
+
+                emotion &&
+
+                typeof emotion.process==="function"
+
+            ){
+
+                thought =
+
+                await emotion.process(thought);
+
+            }
+
+            /* Response */
+
+            const responseGenerator =
+
+                this.get("ResponseGenerator");
+
+            if(
+
+                responseGenerator &&
+
+                typeof responseGenerator.generate==="function"
+
+            ){
+
+                return await responseGenerator.generate(thought);
+
+            }
+
+            return{
+
+                success:true,
+
+                response:
+
+                String(thought)
+
+            };
+
+        }
+
+        catch(error){
+
+            this.log(
+
+                "ERROR",
+
+                error.message
+
+            );
+
+            return{
+
+                success:false,
+
+                response:
+
+                "Internal AI Error"
+
+            };
 
         }
 
     }
 
-    this.status = "OFFLINE";
+      /* =====================================
+       EVENT SYSTEM
+    ===================================== */
 
-    console.log("NIKKI AI OFFLINE");
+    on(event, callback){
 
-    return{
+        if(!this.events.has(event)){
 
-        success:true,
-
-        status:this.status
-
-    };
-
-}
-
-/* ==========================================================
-   RESTART
-========================================================== */
-
-async restart(){
-
-    await this.shutdown();
-
-    return await this.boot();
-
-}
-
-/* ==========================================================
-   MAIN PROCESS
-========================================================== */
-
-async process(input){
-
-    if(this.status !== "ONLINE"){
-
-        return{
-
-            success:false,
-
-            error:"NIKKI AI is Offline"
-
-        };
-
-    }
-
-    try{
-
-        console.log("");
-
-        console.log("User :", input);
-
-        // Brain Module
-        const brain = this.get("Brain");
-
-        if(brain && typeof brain.process === "function"){
-
-            return await brain.process(input);
+            this.events.set(event, []);
 
         }
 
+        this.events.get(event).push(callback);
+
+    }
+
+    emit(event, data = null){
+
+        if(!this.events.has(event)){
+
+            return;
+
+        }
+
+        this.events.get(event).forEach(callback=>{
+
+            try{
+
+                callback(data);
+
+            }
+
+            catch(error){
+
+                this.log(
+
+                    "EVENT",
+
+                    error.message
+
+                );
+
+            }
+
+        });
+
+    }
+
+    off(event){
+
+        if(this.events.has(event)){
+
+            this.events.delete(event);
+
+        }
+
+    }
+
+    /* =====================================
+       SYSTEM INFO
+    ===================================== */
+
+    info(){
+
         return{
 
-            success:true,
+            name:this.name,
 
-            response:"Brain Module Not Connected"
+            version:this.version,
+
+            author:this.author,
+
+            state:this.state,
+
+            modules:this.totalModules,
+
+            bootTime:this.bootTime,
+
+            lastActivity:this.lastActivity
 
         };
 
     }
 
-    catch(error){
+    /* =====================================
+       HEALTH CHECK
+    ===================================== */
 
-        console.error(error);
+    health(){
 
         return{
 
-            success:false,
+            status:this.state,
 
-            error:error.message
+            modules:this.totalModules,
+
+            events:this.events.size,
+
+            uptime:
+
+            this.bootTime
+
+            ?
+
+            Date.now()-this.bootTime
+
+            :
+
+            0
 
         };
 
     }
 
-}
+    /* =====================================
+       GET LOGS
+    ===================================== */
 
-/* ==========================================================
-   MODULE INITIALIZER
-========================================================== */
+    getLogs(){
 
-initializeModules(modules = []){
-
-    for(const module of modules){
-
-        if(!module) continue;
-
-        const name = module.name || module.constructor.name;
-
-        this.register(name, module);
+        return this.logs;
 
     }
 
-    console.log("");
+    clearLogs(){
 
-    console.log("===================================");
+        this.logs=[];
 
-    console.log("Modules Registered :", this.totalModules());
+    }
 
-    console.log("===================================");
+    /* =====================================
+       RESET ENGINE
+    ===================================== */
 
-    console.log("");
+    reset(){
+
+        this.modules.clear();
+
+        this.events.clear();
+
+        this.logs=[];
+
+        this.totalModules=0;
+
+        this.state="OFFLINE";
+
+        this.bootTime=null;
+
+        this.lastActivity=null;
+
+        this.log(
+
+            "SYSTEM",
+
+            "Engine Reset"
+
+        );
+
+    }
+
+    /* =====================================
+       VERSION
+    ===================================== */
+
+    getVersion(){
+
+        return this.version;
+
+    }
+
+    /* =====================================
+       DEBUG
+    ===================================== */
+
+    enableDebug(){
+
+        this.debug=true;
+
+    }
+
+    disableDebug(){
+
+        this.debug=false;
+
+    }
 
 }
 
-/* ==========================================================
-   HEALTH CHECK
-========================================================== */
+/* ==========================================
+   CREATE INSTANCE
+========================================== */
 
-health(){
+const NIKKI = new Nikki();
 
-    return{
+/* ==========================================
+   EXPORT
+========================================== */
 
-        ai:this.status,
-
-        modules:this.totalModules(),
-
-        version:this.version,
-
-        uptime:Date.now()
-
-    };
-
-}
+export default NIKKI;
