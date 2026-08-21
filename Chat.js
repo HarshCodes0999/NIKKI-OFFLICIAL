@@ -56,16 +56,56 @@ function sendMessage(){
    AI Processing Placeholder
 =========================== */
 
-function aiTyping(userMessage){
+async function aiTyping(userMessage) {
 
-    console.log("User Message:", userMessage);
+    try {
 
-    // Future:
-    // NIKKI Brain
-    // Memory
-    // OpenAI API
-    // Voice
-    // Vision
+        const response = await fetch(
+            "http://localhost:3000/api/chat",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify({
+                    message: userMessage
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!data.success) {
+
+            console.error("[NIKKI]", data.response);
+
+            return;
+
+        }
+
+        const aiDiv = document.createElement("div");
+
+        aiDiv.className = "ai-message";
+
+        aiDiv.textContent = data.response;
+
+        chatBox.appendChild(aiDiv);
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "[NIKKI] Connection error:",
+            error
+        );
+
+    }
+
 }
 
 /* ===========================

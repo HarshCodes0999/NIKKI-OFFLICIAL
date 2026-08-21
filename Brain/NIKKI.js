@@ -424,7 +424,7 @@ class Nikki {
 
             ){
 
-                await memory.store(input);
+                await memory.process(input)
 
             }
 
@@ -442,7 +442,7 @@ class Nikki {
 
             ){
 
-                await context.update(input);
+                await context.process(input)
 
             }
 
@@ -502,7 +502,7 @@ class Nikki {
 
             ){
 
-                return await responseGenerator.generate(thought);
+                return await responseGenerator.process(thought)
 
             }
 
